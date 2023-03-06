@@ -1,0 +1,32 @@
+{% extends "Admin_base.html" %}
+{% block title %}
+<title>Clerk Attendance Summary</title>        
+{% endblock %}
+{% block content %}
+<form action = "#" method = "POST">
+    <label for="id">search by id</label>
+    <input type = "text" name = "id" id="id"><br>
+    <button type="submit" id="search">Search</button>
+</form>
+<table>
+    <caption>MDFCS Registered Clerks attendance Summary</caption>
+    <tr style="color: #ffffff; background-color: #000000">
+        <th>Clerk Id</th>
+        <th>Clerk Name</th>
+        <th>Date</th>
+        <th>Time In</th>
+        <th>Time Out</th>
+        <th>Total Working Hours</th>
+    </tr>
+{% for record in result %}
+<tr>
+<td>{{record.Clerks.clerk_id}}</td>
+<td>{{record.Clerks.clerk_sname + " " + record.Clerks.clerk_fname}}</td>
+<td>{{record.Attendance.date}}</td>
+<td>{{record.Attendance.time_in}}</td>
+<td>{{record.Attendance.time_out}}</td>
+<td>{{record.Attendance.total_time}}</td>
+</tr>
+{% endfor %}
+</table>
+{% endblock %}

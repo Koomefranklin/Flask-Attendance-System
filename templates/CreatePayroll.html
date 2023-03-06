@@ -1,0 +1,25 @@
+<html>
+<head>
+   <link rel="stylesheet" href="{{url_for('static', filename='base_style.css')}} ">
+</head>
+<body>
+{% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for msg in messages %}
+                <div class = "flash"><p>{{msg}}</p></div>
+            {% endfor %}
+        {% endif %}
+        {% endwith %}
+<form action="#" method ="POST">
+    <label for="month">Month</label>
+    <input type = "month" name = "month" id="month" required autofocus><br>
+    <label for="year">Year</label>
+    <input type = "year" name = "year" id="year" required><br>
+    <label for="pay-rate">Pay Rate</label>
+    <input type = "number" name = "pay-rate" id="pay-rate" required><br>
+    <br>
+    <button type = "submit">Generate Payroll</button>
+    <button onclick="window.close()">Exit</button>
+</form>
+</body>
+</html>

@@ -1,0 +1,16 @@
+{% extends "Admin_base.html" %}
+{% block navbar %}
+    <img src="{{ url_for('static', filename='logo2.png') }}" alt="Logo" class="logo">
+{% endblock %}
+{% block content %}
+<div class = "form">
+    <form action="#" method ="POST">
+        <label for="username">Username</label>
+        <input type = "text" name = "username" id="username" required autofocus><br>
+        <label for="password">Password</label>
+        <input type = "password" name = "password" id="password" required><br>
+        <br>
+        <button type = "submit">Sign in</button>
+    </form>
+</div>
+{% endblock %}

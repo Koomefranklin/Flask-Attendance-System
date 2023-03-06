@@ -1,0 +1,230 @@
+html, body {
+     min-height: 100%;
+}
+body{
+    text-align: center;
+    background: rgba(0,0,255,0.5) url("can.png") no-repeat;
+    font-size: 20px;
+    font-family: 'Times New Roman', Times, serif;
+    background-size: cover;
+    opacity: 75%;
+}
+.overlay {
+    position: relative;
+    min-height: 100%;
+    background-color: black;
+    opacity: 0.9;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    margin: auto;
+    flex-direction: column;
+}
+.flash {
+    color: green;
+    font-style: normal;
+    font-weight: normal;
+    font-family: monospace;
+}
+h1{font-weight: bolder;
+    font-family: sans-serif;
+}
+img.logo {
+    width: 50px;
+    display: block;
+    margin: 5px auto;
+    border-radius: 8px;
+}
+table{
+    border:1px;
+    border-collapse: collapse;
+    border-radius: 20px;
+    margin:auto;
+    width:80%;
+    text-align: left;
+    align-self:center;
+    font-family: 'Courier New', Courier, monospace;
+    background-color: white;
+}
+tr {
+    border-top: 1px solid silver;
+   
+}
+td {
+    height: 80px;
+}
+caption {
+    font-size: 34px;
+    font-weight: bold;
+    color:white;
+}
+
+form{
+    max-width: 500px;
+    margin: 10px auto;
+    background-color: rgba(255,255,255,1);
+    align-items: center;
+    font-weight: bold;
+    font-size: 20px;
+    font-family: 'Times New Roman', Times, serif;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+}
+label {
+    display: flex;
+    flex-direction: row;
+    margin: 10px;
+    justify-content: center;
+}
+input {
+    border-radius: 10px;
+    font-size: 30px;
+    width: 80%;
+}
+input:disabled {
+    background-color: grey;
+}
+button{
+    text-transform: uppercase;
+    font-size: 30px;
+    background-color: darkcyan;
+    color: #ffffff;
+    font-weight: bold;
+    font-family: 'Times New Roman', Times, serif;
+    opacity: 1;
+    border-radius: 10px;
+    border: 2px solid darkcyan ;
+    margin: 10px;
+    padding: 10px 30px;
+}
+button:hover{
+    background-color: #ffffff;
+    color: darkcyan;
+    opacity: 100%;
+}
+button:disabled {
+    background-color: grey;
+    color: white;
+}
+.date {
+    font-family: 'Digital-7 Mono', monospace;
+    font-weight: bold;
+    background-color: black;
+    color: green;
+    font-size: 20px;
+    border-radius: 10px;
+    margin: auto;
+    max-width: 500px;
+}
+time {
+    font-size: 50px;
+}
+.links {
+    background-color: darkcyan;
+    border-radius: 10px;
+    margin: 10px auto;
+    max-width: max-content;
+    border: 2px solid darkcyan;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+.links a{
+    background-color: darkcyan;
+    text-decoration: none;
+    border: 2px solid darkcyan;
+    padding: 10px 30px;
+    font-size: 24px;
+    margin: 10px;
+    color: white;
+    font-weight: bold;
+}
+.links a:hover {
+    background: none;
+    text-decoration: underline;
+}
+
+.topnav {
+    background-color: darkcyan;
+    overflow: hidden;
+    margin: auto;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.topnav a {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.topnav a:hover {
+    background: none;
+    color: black;
+    border-radius: 20px;
+    text-decoration: underline;
+}
+
+.topnav a.active {
+  background-color: #04AA6D;
+  color: white;
+}
+.steps {
+    text-decoration: none;
+    font-weight: bold;
+    color: black;
+    background-color: white;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: column;
+    max-width: 500px;
+    margin: 10px auto;
+    border-radius: 10px;
+}
+.steps a{
+    color: black;
+    background-color: darkcyan;
+    border: 2px solid darkcyan;
+    padding: 10px 30px;
+    text-decoration: none;
+}
+.steps .explanation {
+    text-align: left;
+    margin: 10px;
+}
+.matching-password {
+    text-align: left;
+    margin: 0 10px;
+    font-size: 12px;
+    color: red;
+}
+.password-pattern {
+    text-align: left;
+    margin: 0 10px;
+    font-size: 12px;
+}
+.password-pattern input[type="checkbox"], .password-pattern label {
+    width: auto;
+    margin: 2px;
+}
+.password-pattern p {
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    color: red;
+    margin: 0;
+}
+#upper:checked + label, #lower:checked + label, #special-character:checked + label,
+#number:checked + label, #length:checked + label{
+    color: green;
+}

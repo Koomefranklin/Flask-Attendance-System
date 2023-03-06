@@ -1,0 +1,29 @@
+{% extends "Admin_base.html" %}
+{% block content %}
+<form action = "#" method = "POST">
+    <label for="id">search by id</label>
+    <input type = "text" name = "id" id="id"><br>
+    <button type="submit">Search</button>
+</form>
+<table>
+    <caption>MDFCS Registered Clerks</caption>
+    <tr style="color: #ffffff; background-color: #000000">
+        <th>Clerk Id</th>
+        <th>Surname</th>
+        <th>First Name</th>
+        <th>Email Address</th>
+        <th>Physical Address</th>
+        <th>Phone Number</th>
+    </tr>
+{% for record in result %}
+<tr>
+<td>{{record.clerk_id}}</td>
+<td>{{record.clerk_sname}}</td>
+<td>{{record.clerk_fname}}</td>
+<td>{{record.clerk_email}}</td>
+<td>{{record.clerk_address}}</td>
+<td>{{record.clerk_phone}}</td>
+</tr>
+{% endfor %}
+</table>
+{% endblock %}

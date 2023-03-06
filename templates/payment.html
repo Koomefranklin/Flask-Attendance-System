@@ -1,0 +1,23 @@
+{% extends "Clerk_base.html" %}
+{% block title %}
+<title>Attendance Summary</title>
+{% endblock %}
+{% block content %}
+<table>
+    <caption>MDFCS Clerk Payroll for {{id}}</caption>
+    <tr style="color: #ffffff; background-color: #000000">
+        <th>Month</th>
+        <th>Total Hours</th>
+        <th>Pay Rate</th>
+        <th>Total Pay</th>
+    </tr>
+{% for record in result %}
+<tr>
+<td>{{record.month_year}}</td>
+<td>{{record.total_hours}}</td>
+<td>{{record.pay_rate}}</td>
+<td>{{record.total_pay}}</td>
+</tr>
+{% endfor %}
+</table>
+{% endblock %}

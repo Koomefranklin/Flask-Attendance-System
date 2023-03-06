@@ -1,0 +1,20 @@
+{% extends "Admin_base.html" %}
+{% block title %}
+<title>Clerk Registration</title>
+{% endblock %}
+{% block content %}
+<div class = "form">
+    <form action = "#" method="POST">
+        <label for="s-name">Surname</label>
+        <input type = "text" name = "s-name" id="s-name" required autofocus>
+        <label for="f-name">First Name</label>
+        <input type = "text" name = "f-name" id="f-name" required>
+        <label for="address">Address</label>
+        <input type = "text" name = "address" id="address" required>
+        <label for="phone">Phone</label>
+        <input type = "text" name = "phone" id="phone" required>
+        <button type = "reset" id="clear">Clear</button>
+        <button type = "submit" id="register">Register</button>
+    </form>
+</div>
+{% endblock %}

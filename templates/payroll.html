@@ -1,0 +1,41 @@
+{% extends "Admin_base.html" %}
+{% block title %}
+    <script>
+    function AddMonth() {
+      window.open("{{ url_for('Generate_Payroll') }}", "Create Payroll", "width=auto,height=500px");
+    }
+  </script>
+{% endblock %}
+{% block content %}
+<div class = "form">
+<button onclick="AddMonth()">Generate Payroll</button>
+<form action="#" method="post">
+    <label for="month">Filter by month</label>
+    <input type="text" name="month" id="month"><br>
+    <label for="id">Filter by clerk id</label>
+    <input type="text" name="id" id="id">
+    <button type="submit">Filter</button>
+</form>
+</div>
+<table>
+    <caption>MDFCS Registered Clerks Payroll Summary</caption>
+    <tr style="color: #ffffff; background-color: #000000">
+        <th>Clerk Id</th>
+        <th>Clerk Name</th>
+        <th>Period</th>
+        <th>Total Month hours</th>
+        <th>Pay rate</th>
+        <th>Payment</th>
+    </tr>
+{% for record in pay_roll %}
+<tr>
+<td>{{record.Clerks.clerk_id}}</td>
+<td>{{record.Clerks.clerk_sname + " " + record.Clerks.clerk_fname}}</td>
+<td>{{record.Payroll.month_year}}</td>
+<td>{{record.Payroll.total_hours}}</td>
+<td>{{record.Payroll.pay_rate}}</td>
+<td>{{record.Payroll.total_pay}}</td>
+</tr>
+{% endfor %}
+</table>
+{% endblock %}

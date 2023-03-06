@@ -1,0 +1,33 @@
+{% extends "Clerk_base.html" %}
+{% block title %}
+<script type="text/javascript">
+function expand (){
+    const content = document.getElementById('explanation');
+    if (content.hidden === false) {
+        content.hidden = true;
+    } else {
+        content.hidden = false;
+    }
+}
+</script>
+{% endblock %}
+{% block content %}
+<div class = "form">
+    <form action="#" method ="POST">
+        <label for="clerk-username">Username</label>
+        <input type = "text" name = "clerk-username" id="clerk-username" required autofocus><br>
+        <label for="password">Password</label>
+        <input type = "password" name = "password" id="password" required><br>
+        <button type = "submit">Sign In</button>
+    </form>
+</div>
+    <div class="steps">
+    <a href="#" onclick="expand()">First time here?</a>
+    <span hidden="hidden" id="explanation" class="explanation">
+        Your email is your username.<br>
+        The email is in the format of id@mdfcs.co<br>
+        Example c111@mdfcs.co for C111.<br>
+        Your password is your phone number which you will have to change on first login.
+    </span>
+    </div>
+{% endblock %}

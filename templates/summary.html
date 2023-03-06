@@ -1,0 +1,23 @@
+{% extends "Clerk_base.html" %}
+{% block title %}
+<title>Attendance Summary</title>        
+{% endblock %}
+{% block content %}
+<table>
+    <caption>MDFCS Clerk Attendance Summary for {{id}}</caption>
+    <tr style="color: #ffffff; background-color: #000000">
+        <th>Date</th>
+        <th>Time In</th>
+        <th>Time Out</th>
+        <th>Total Time</th>
+    </tr>
+{% for record in summary %}
+<tr>
+<td>{{record.date}}</td>
+<td>{{(record.time_in)}}</td>
+<td>{{record.time_out}}</td>
+<td>{{record.total_time}}</td>
+</tr>
+{% endfor %}
+</table>
+{% endblock %}
