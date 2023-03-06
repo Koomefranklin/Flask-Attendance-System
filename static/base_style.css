@@ -10,8 +10,8 @@ body{
     opacity: 75%;
 }
 .overlay {
-    position: relative;
-    min-height: 100%;
+    position: fixed;
+    overflow-y: auto;
     background-color: black;
     opacity: 0.9;
     top: 0;
@@ -33,7 +33,7 @@ h1{font-weight: bolder;
 }
 img.logo {
     width: 50px;
-    display: block;
+    display: none;
     margin: 5px auto;
     border-radius: 8px;
 }

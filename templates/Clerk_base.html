@@ -2,6 +2,7 @@
 <html>
     <head>
         <link rel="stylesheet" href="{{url_for('static', filename='base_style.css')}} ">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
         {% block title %}
         {% endblock %}
     <title>{{ title }}</title>
@@ -10,7 +11,7 @@
     <div class="overlay">
         {% block navbar %}
         <div class="topnav">
-             <a href = "{{url_for('home')}}"><img src="{{ url_for('static', filename='logo2.png') }}" alt="Logo" class="logo"></a>
+             <a href = "{{url_for('home')}}"><i class="fa fa-home"></i></a>
              <a href="{{ url_for('attendancesummary') }}">Attendance Summary</a>
             <a href = "{{url_for('payinfo')}}" >Payment Information</a>
             <a href = "{{url_for('changePassword')}}" >Change Password</a>
