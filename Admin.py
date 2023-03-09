@@ -1,15 +1,18 @@
 from flask import Flask, request, redirect, url_for, flash, render_template, session
 from flask_sqlalchemy import SQLAlchemy
-from sqlalchemy import extract, or_
+from sqlalchemy import extract, or_, and_
 from passlib.hash import sha256_crypt
 import datetime
 from sqlalchemy.exc import IntegrityError
+import logging
 
 app = Flask(__name__)
 app.secret_key = "MDFCS"
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///mdfcs.sqlite3'
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
-app.permanent_session_lifetime = datetime.timedelta(minutes=5)
+app.permanent_session_lifetime = datetime.timedelta(minutes=50)
+logging.basicConfig(filename='app.log', level=logging.DEBUG,
+                    format='%(asctime)s %(levelname)s: %(message)s')
 
 db = SQLAlchemy(app)
 
@@ -34,14 +37,16 @@ class Clerks(db.Model):
     clerk_email = db.Column(db.String(30), unique=True)
     clerk_address = db.Column(db.String(20))
     clerk_phone = db.Column(db.String(10), unique=True)
+    working = db.Column(db.Boolean)
 
-    def __init__(self, clerk_id, clerk_fname, clerk_sname, clerk_email, clerk_address, clerk_phone):
+    def __init__(self, clerk_id, clerk_fname, clerk_sname, clerk_email, clerk_address, clerk_phone, working):
         self.clerk_id = clerk_id
         self.clerk_fname = clerk_fname
         self.clerk_sname = clerk_sname
         self.clerk_address = clerk_address
         self.clerk_email = clerk_email
         self.clerk_phone = clerk_phone
+        self.working = working
 
 
 class ClerkPortal(db.Model):
@@ -246,19 +251,30 @@ def viewattendance():
 @app.route("/delete", methods=["POST", "GET"])
 def deleterecords():
     if logged_in() == logged_in:
+        all_clerks = Clerks.query.filter(Clerks.working == True).all()
         if request.method == "POST":
             c_id = request.form["id"].capitalize()
-            clerkfound = Clerks.query.filter_by(clerk_id=c_id).first()
+            clerkfound = Clerks.query.filter(and_(Clerks.clerk_id.like(f'%{c_id}%' )), (Clerks.working == True)).all()
             if clerkfound:
-                db.session.delete(clerkfound)
-                db.session.commit()
-                flash(f"Clerk {c_id} deleted from database")
-                return redirect(url_for("viewclerks"))
+                return render_template("delete_clerk.html", title = "Delete", result=clerkfound)
             else:
                 flash("Requested id not found")
-                return render_template("delete_clerk.html",title = "Delete")
+                return render_template("delete_clerk.html", title = "Delete", result=all_clerks)
         else:
-            return render_template("delete_clerk.html",title = "Delete")
+            return render_template("delete_clerk.html", title = "Delete", result=all_clerks)
+    else:
+        return redirect(url_for("login"))
+
+
+@app.route("/deactivate", methods=["POST"])
+def deactivaterecords():
+    if logged_in() == logged_in:
+        data = request.get_json()
+        c_id = data['value']
+        clerk = Clerks.query.filter_by(clerk_id=c_id).first()
+        clerk.working = False
+        db.session.commit()
+        return render_template("delete_clerk.html")
     else:
         return redirect(url_for("login"))
 

@@ -8,20 +8,51 @@ body{
     font-family: 'Times New Roman', Times, serif;
     background-size: cover;
     opacity: 75%;
+    color-scheme: dark;
 }
 .overlay {
+    background-color: rgba(0, 0, 0, 0.733);
     position: fixed;
-    overflow-y: auto;
-    background-color: black;
-    opacity: 0.9;
+    margin-top: 50px;
     top: 0;
-    bottom: 0;
-    left: 0;
     right: 0;
-    display: flex;
-    margin: auto;
-    flex-direction: column;
+    left: 0;
+    bottom: 0;
+    overflow-y: auto;
 }
+.top-nav {
+    background-color: darkcyan;
+    color: white;
+    position: fixed;
+    top: 0;
+    display: flex;
+    justify-content:center;
+    font-size: 35px;
+    overflow-x: hidden;
+    width: 100%;
+    height: available;
+    left: 0;
+}
+.top-nav a {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 20px;
+}
+.top-nav .active {
+  background-color: white;
+  color: darkcyan;
+}
+.top-nav a:hover {
+    background: none;
+    color: black;
+    border-radius: 20px;
+    text-decoration: underline;
+}
+
 .flash {
     color: green;
     font-style: normal;
@@ -49,16 +80,29 @@ table{
     background-color: white;
 }
 tr {
-    border-top: 1px solid silver;
-   
+    border-top: 1px solid black;
 }
 td {
     height: 80px;
+    border-left: 1px dotted black;
+}
+
+td label {
+    cursor: pointer;
+    margin: 0;
+    height: 100%;
+    background-color: burlywood;
 }
 caption {
     font-size: 34px;
     font-weight: bold;
     color:white;
+}
+.login-form{
+    margin: 100px auto auto;
+}
+.attendance-form {
+    margin: 150px auto auto;
 }
 
 form{
@@ -87,6 +131,10 @@ input {
 input:disabled {
     background-color: grey;
 }
+.row-buttons {
+    display: flex;
+    flex-direction: row;
+}
 button{
     text-transform: uppercase;
     font-size: 30px;
@@ -108,6 +156,20 @@ button:hover{
 button:disabled {
     background-color: grey;
     color: white;
+}
+.select-form {
+    position: fixed;
+    bottom: 0;
+    height: max-content;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    width: 100%;
+}
+input[type="checkbox"] {
+    display: flex;
+    height: 100%;
+    width: 100%;
 }
 .date {
     font-family: 'Digital-7 Mono', monospace;
@@ -147,37 +209,6 @@ time {
     text-decoration: underline;
 }
 
-.topnav {
-    background-color: darkcyan;
-    overflow: hidden;
-    margin: auto;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-
-.topnav a {
-    float: left;
-    color: #f2f2f2;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 20px;
-}
-
-.topnav a:hover {
-    background: none;
-    color: black;
-    border-radius: 20px;
-    text-decoration: underline;
-}
-
-.topnav a.active {
-  background-color: #04AA6D;
-  color: white;
-}
 .steps {
     text-decoration: none;
     font-weight: bold;

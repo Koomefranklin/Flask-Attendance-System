@@ -3,7 +3,7 @@
 <title>Clerk Registration</title>
 {% endblock %}
 {% block content %}
-<div class = "form">
+<div class = "registration-form">
     <form action = "#" method="POST">
         <label for="s-name">Surname</label>
         <input type = "text" name = "s-name" id="s-name" required autofocus>
@@ -13,8 +13,10 @@
         <input type = "text" name = "address" id="address" required>
         <label for="phone">Phone</label>
         <input type = "text" name = "phone" id="phone" required>
-        <button type = "reset" id="clear">Clear</button>
-        <button type = "submit" id="register">Register</button>
+        <span class="row-buttons">
+            <button type = "reset" id="clear">Clear</button>
+            <button type = "submit" id="register">Register</button>
+        </span>
     </form>
 </div>
 {% endblock %}

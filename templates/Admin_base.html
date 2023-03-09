@@ -1,17 +1,19 @@
 <!DOCTYPE html>
-<html>
+<html lang="">
     <head>
         <link rel="stylesheet" href="{{url_for('static', filename='base_style.css')}} ">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-
+        <script type="text/javascript" src="{{ url_for('static', filename='functions.js') }}"></script>
+         <script type="text/javascript">
+             setInterval(updateTime, 1000);
+         </script>
         {% block title %}
         {% endblock %}
     <title>{{ title }}</title>
     </head>
     <body>
-        <div class="overlay">
-            {% block navbar %}
-            <div class="topnav">
+        {% block navbar %}
+            <div class="top-nav" id="top-nav">
                  <a href = "{{url_for('home')}}"><i class="fa fa-home"></i></a>
                  <a href="{{ url_for('clerkregistration') }}">Register new clerk</a>
                 <a href = "{{url_for('viewclerks')}}" >Registered Clerks</a>
@@ -21,28 +23,7 @@
                 <a href = "{{url_for('adminsignout')}}" >Signout</a>
             </div>
             {% endblock %}
-
-            <script>
-                function updateTime()
-                {const date = new Date();
-                const dateString = date.toLocaleDateString("en-US", {
-                  weekday: "long",
-                  year: "numeric",
-                  month: "long",
-                  day: "numeric"
-                });
-                const timeString = date.toLocaleTimeString("en-US", {
-                  hour12: false,
-                  hour: "numeric",
-                  minute: "2-digit",
-                  second: "2-digit"
-                });
-                document.getElementById("time").innerHTML = timeString;
-                document.getElementById("date").innerHTML = dateString;
-            }
-                setInterval(updateTime, 1000);
-              </script>
-
+        <div class="overlay">
             {% with messages = get_flashed_messages() %}
             {% if messages %}
                 {% for msg in messages %}
@@ -55,10 +36,11 @@
 
             {% endblock %}
             <div class="date">
-                <date id="date"></date><br>
+                <span id="date"></span><br>
                 <hr>
                 <time id="time"></time><br>
                 </div>
         </div>
+    <script type="text/javascript">window.onload = setActive;</script>
     </body>
 </html>

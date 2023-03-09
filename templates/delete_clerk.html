@@ -1,8 +1,40 @@
 {% extends "Admin_base.html" %}
+{% block title %}
+
+{% endblock %}
 {% block content %}
 <form action = "#" method = "POST">
-    <label for="id">search by id</label>
+    <label for="id">Search by ID</label>
     <input type = "text" name = "id" id="id" autofocus><br>
-    <button type="submit">Delete</button>
+    <button type="submit">Search</button>
 </form>
+    <form id="footer"></form>
+    <table>
+    <caption>Click on the Clerk ID to select</caption>
+    <tr style="color: #ffffff; background-color: #000000">
+        <td>Select</td>
+        <td>Clerk ID</td>
+        <td>Clerk Name</td>
+        <td>Email</td>
+        <td>Address</td>
+        <td>Phone Number</td>
+    </tr>
+    {% for record in result %}
+        <tr>
+            <td><input type="checkbox" id="{{ record.clerk_id }}" value="{{ record.clerk_id }}" form="footer"></td>
+            <td><label for="{{ record.clerk_id }}" class="clerk-id">{{record.clerk_id}}</label></td>
+            <td>{{record.clerk_sname + record.clerk_fname}}</td>
+            <td>{{record.clerk_email}}</td>
+            <td>{{record.clerk_address}}</td>
+            <td>{{record.clerk_phone}}</td>
+        </tr>
+    {% endfor %}
+    </table>
+    <div class="select-form">
+    <button type="reset" id="unselect" form="footer">Unselect all</button>
+    <button type="submit" id="deactivate" form="footer">Deactivate</button>
+    </div>
+    <script type="text/javascript">
+    select();
+    </script>
 {% endblock %}

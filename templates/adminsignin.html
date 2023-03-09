@@ -1,9 +1,9 @@
 {% extends "Admin_base.html" %}
 {% block navbar %}
-    <img src="{{ url_for('static', filename='logo2.png') }}" alt="Logo" class="logo">
+    <div class="top-nav" id="top-nav">MDFCS Admin Signin</div>
 {% endblock %}
 {% block content %}
-<div class = "form">
+<div class = "login-form">
     <form action="#" method ="POST">
         <label for="username">Username</label>
         <input type = "text" name = "username" id="username" required autofocus><br>

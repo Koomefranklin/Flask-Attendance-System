@@ -1,40 +1,23 @@
 <!DOCTYPE html>
-<html>
+<html lang="">
     <head>
-        <link rel="stylesheet" href="{{url_for('static', filename='base_style.css')}} ">
+    <link rel="stylesheet" href="{{url_for('static', filename='base_style.css')}} ">
+    <script type="text/javascript" src="{{ url_for('static', filename='functions.js') }}"></script>
+    <script type="text/javascript">
+        setInterval(updateTime, 1000);
+    </script>
         {% block title %}
         {% endblock %}
     <title>{{ title }}</title>
     </head>
     <body>
         {% block navbar %}
-            <div class="topnav">
-            <a href="{{url_for('checkin')}}">checkin</a>
-            <a href="{{url_for('checkout')}}">checkout</a>
+            <div class="top-nav" id="top-nav">
+            <a href="{{url_for('checkin')}}">CHECK-IN</a>
+            <a href="{{url_for('checkout')}}">CHECK-OUT</a>
             </div>
         {% endblock %}
-
-        <script>
-            function updateTime()
-            {const date = new Date();
-            const dateString = date.toLocaleDateString("en-US", {
-              weekday: "long",
-              year: "numeric",
-              month: "long",
-              day: "numeric"
-            });
-            const timeString = date.toLocaleTimeString("en-US", {
-              hour12: false,
-              hour: "numeric",
-              minute: "2-digit",
-              second: "2-digit"
-            });
-            document.getElementById("time").innerHTML = timeString;
-            document.getElementById("date").innerHTML = dateString;
-        }
-            setInterval(updateTime, 1000);
-          </script>
-
+        <div class="overlay">
         {% with messages = get_flashed_messages() %}
         {% if messages %}
             {% for msg in messages %}
@@ -42,17 +25,18 @@
             {% endfor %}
         {% endif %}
         {% endwith %}
-
-        <form action = "#" method = "POST">
-    <label for="id">Input Id to {{ title }}</label>
-    <input type = "text" name = "id" id="id" autofocus><br>
-    <button type="submit">{{ title }}</button>
+        <div class="attendance-form">
+            <form action = "#" method = "POST">
+                <label for="id">Input ID to {{ title }}</label>
+                <input type = "text" name = "id" id="id" autofocus><br>
+                <button type="submit">{{ title }}</button>
             </form>
+        </div>
         <div class="date">
-            <date id="date"></date><br>
+            <span id="date"></span><br>
             <hr>
             <time id="time"></time><br>
-            </div>
-
+        </div>
+        </div>
     </body>
 </html>

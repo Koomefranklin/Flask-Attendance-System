@@ -1,15 +1,8 @@
 {% extends "Clerk_base.html" %}
 {% block title %}
-<script type="text/javascript">
-function expand (){
-    const content = document.getElementById('explanation');
-    if (content.hidden === false) {
-        content.hidden = true;
-    } else {
-        content.hidden = false;
-    }
-}
-</script>
+{% endblock %}
+{% block navbar %}
+    <div class="top-nav">MDFCS Clerk Portal Signin</div>
 {% endblock %}
 {% block content %}
 <div class = "form">
