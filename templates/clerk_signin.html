@@ -2,25 +2,26 @@
 {% block title %}
 {% endblock %}
 {% block navbar %}
-    <div class="top-nav">MDFCS Clerk Portal Signin</div>
+    <header>MDFCS Clerk Portal Signin</header>
 {% endblock %}
 {% block content %}
-<div class = "form">
+<div class = "login-form">
     <form action="#" method ="POST">
-        <label for="clerk-username">Username</label>
-        <input type = "text" name = "clerk-username" id="clerk-username" required autofocus><br>
+        <label for="clerk-username">Email</label>
+        <input type = "email" name = "email" id="email" required autofocus>
         <label for="password">Password</label>
-        <input type = "password" name = "password" id="password" required><br>
+        <input type = "password" name = "password" id="password" required>
+        <input type="checkbox" name="visibility" id="visibility" onclick="showPassword()" style="display: none">
+        <label for="visibility" style="cursor: pointer;">Show Password</label>
         <button type = "submit">Sign In</button>
+        <a href="{{ url_for('reset_password') }}">Forgot password?</a>
     </form>
 </div>
     <div class="steps">
     <a href="#" onclick="expand()">First time here?</a>
     <span hidden="hidden" id="explanation" class="explanation">
-        Your email is your username.<br>
-        The email is in the format of id@mdfcs.co<br>
-        Example c111@mdfcs.co for C111.<br>
-        Your password is your phone number which you will have to change on first login.
+        Use the email you registered using.<br>
+        Your password is your phone number which you will be prompted to change after first login.
     </span>
     </div>
 {% endblock %}

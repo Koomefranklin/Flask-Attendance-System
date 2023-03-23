@@ -1,11 +1,12 @@
 {% extends "Admin_base.html" %}
 {% block title %}
-<script type="text/javascript" src="{{ url_for('static', filename='functions.js') }}">
-
-</script>
 {% endblock %}
 {% block navbar %}
-    <div class="top-nav">MDFCS Admin Signup</div>
+    {# Overwrite the contents of the nav bar from the base #}
+    <header class="nav-bar">
+        <a href = "{{url_for('home')}}"><i class="fa fa-home"></i></a>
+        MDFCS Admin Signup
+    </header>
 {% endblock %}
 {% block content %}
 <div class = "login-form">
@@ -33,8 +34,10 @@
         <span id="matching-password" class="matching-password" hidden="hidden">
             Passwords don't match
         </span>
-        <button type = "submit" id="register">Register</button>
-        <script type="text/javascript">check_passwords()</script>
+        {#<input type="checkbox" name="visibility" id="visibility" onclick="showPassword()" style="display: none">
+        <label for="visibility" style="cursor: pointer;">Show Password</label>#}
+        <button type = "submit" id="submit" disabled>Register</button>
+        <script type="text/javascript">check_passwords();</script>
     </form>
 </div>
 {% endblock %}

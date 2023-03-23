@@ -1,106 +1,129 @@
-from flask import Flask, request, redirect, url_for, flash, render_template, session
-from flask_sqlalchemy import SQLAlchemy
-from sqlalchemy import extract, or_, and_
-from passlib.hash import sha256_crypt
-import datetime
-from sqlalchemy.exc import IntegrityError
-import logging
+#!/usr/bin/venv python
 
-app = Flask(__name__)
-app.secret_key = "MDFCS"
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///mdfcs.sqlite3'
-app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
-app.permanent_session_lifetime = datetime.timedelta(minutes=50)
-logging.basicConfig(filename='app.log', level=logging.DEBUG,
-                    format='%(asctime)s %(levelname)s: %(message)s')
-
-db = SQLAlchemy(app)
+# Get the common configuration like app setup and database tables
+from common import *
 
 
+# Table used only by the admin site
 class Admins(db.Model):  # type: ignore
     adm_username = db.Column(db.String(10), primary_key=True)
     adm_name = db.Column(db.String(30))
-    adm_email = db.Column(db.String(30))
     adm_password = db.Column(db.String(100))
+    email = db.Column(db.String(50), nullable=False)
 
-    def __init__(self, adm_username, adm_name, adm_email, adm_password):
-        self.adm_email = adm_email
+    def __init__(self, adm_username, adm_name, adm_password, email):
         self.adm_username = adm_username
         self.adm_password = adm_password
         self.adm_name = adm_name
+        self.email = email
 
 
-class Clerks(db.Model):
-    clerk_id = db.Column(db.String(20), primary_key=True)
-    clerk_fname = db.Column(db.String(20))
-    clerk_sname = db.Column(db.String(20))
-    clerk_email = db.Column(db.String(30), unique=True)
-    clerk_address = db.Column(db.String(20))
-    clerk_phone = db.Column(db.String(10), unique=True)
-    working = db.Column(db.Boolean)
-
-    def __init__(self, clerk_id, clerk_fname, clerk_sname, clerk_email, clerk_address, clerk_phone, working):
-        self.clerk_id = clerk_id
-        self.clerk_fname = clerk_fname
-        self.clerk_sname = clerk_sname
-        self.clerk_address = clerk_address
-        self.clerk_email = clerk_email
-        self.clerk_phone = clerk_phone
-        self.working = working
-
-
-class ClerkPortal(db.Model):
-    clerk_username = db.Column(db.String, primary_key=True)
-    clerk_id = db.Column(db.String, db.ForeignKey('clerks.clerk_id'))
-    clerk_password = db.Column(db.String)
-
-    def __init__(self, clerk_username, clerk_id, clerk_password):
-        self.clerk_username = clerk_username
-        self.clerk_id = clerk_id
-        self.clerk_password = clerk_password
-
-
-class Payroll(db.Model):
-    clerk_id_month_year = db.Column(db.String, primary_key=True)
-    clerk_id = db.Column(db.String, db.ForeignKey('clerks.clerk_id'))
-    month_year = db.Column(db.String)
-    total_hours = db.Column(db.Float)
-    pay_rate = db.Column(db.Float)
-    total_pay = db.Column(db.Float)
-
-    def __init__(self, clerk_id_month_year, clerk_id, month_year, total_hours, pay_rate, total_pay):
-        self.clerk_id_month_year = clerk_id_month_year
-        self.clerk_id = clerk_id
-        self.month_year = month_year
-        self.total_hours = total_hours
-        self.pay_rate = pay_rate
-        self.total_pay = total_pay
-
-
-class Attendance(db.Model):
-    clerk_id_date = db.Column(db.String, primary_key=True)
-    clerk_id = db.Column(db.String, db.ForeignKey('clerks.clerk_id'))
-    date = db.Column(db.Date)
-    time_in = db.Column(db.Time)
-    time_out = db.Column(db.Time)
-    total_time = db.Column(db.Float)
-
+# Function to check if  there is a logged in user
+# Get the username and password from the session and verify from the database
+# if the session is empty then no logged in usser
+# If the username and password in the session are different then return false
 def logged_in():
     if "username" in session:
         name = session["username"]
         password = Admins.query.filter_by(adm_username=name).first().adm_password
         if password == session["password"]:
-            status = logged_in
-            return status
+            return True
     else:
-        return redirect(url_for("login"))
+        return False
+
+
+# Function to get the name of the current user
+def logged_user():
+    username = session["username"]
+    name = Admins.query.filter(Admins.adm_username == username).first().adm_name
+    return name
+
+@app.route("/reset-password", methods=["GET","POST"])
+def reset_password():
+    # reset forgoten password
+    if request.method == "POST":
+        try:
+            # Using the try except blocks to catch errors at runtime
+            # Get the inputs and verify the excistence from db
+            email = request.form["email"].lower()
+            input_code = request.form["code"]
+            user = Admins.query.filter(Admins.email == email).first()
+            if len(input_code) == 0:
+                password_string = ''
+                for i in range(6):
+                    password_string += str(random.randint(0,9))
+                code = int(password_string) # Randomly generated code for password reset
+                msg = Message(f'Hello {user.adm_name}', sender='escapistcyber@gmail.com', recipients=[user.email])
+                msg.body = f"Request for password reset.\nEnter the code below to reset your password for the MDFCS Admin Account.\n{code}\nThe code is valid for 15 minutes."
+                mail.send(msg) # Send code via email
+                request_time = datetime.datetime.now()
+                reset_details = ResetCodes(email, code, request_time) # Add the code, email and time to a database table
+                db.session.add(reset_details)
+                db.session.commit()
+                flash(f"Reset code sent to {user.email} and is valid for 15 minutes")
+                return render_template('reset_password.html', title="Password Reset", code_hidden="false", button="Submit", email=email)
+            else:
+                try:
+                    # Verify that the user and code match
+                    user_code = ResetCodes.query.filter(
+                        and_(ResetCodes.user_email == email, ResetCodes.reset_code == input_code)).first()
+                    code_sent_time = user_code.request_time
+                    elapsed_time = (datetime.datetime.now() - code_sent_time).total_seconds() / 60
+                    if elapsed_time > 15: # Verify that the code is not timed out (15 minutes)
+                        db.session.delete(user_code) # Remove the code from db
+                        db.session.commit()
+                        flash("Code timed out Please request another code")
+                        return redirect(url_for('reset_password'))
+                    else:
+                        db.session.delete(user_code)
+                        db.session.commit()
+                        flash("Reset password")
+                        return redirect(url_for('new_password', email=email))
+                except AttributeError: # Code is incorect
+                    flash("Wrong code. Request a new one")
+                    return redirect(url_for('reset_password'))
+        except IntegrityError: # Trying to request code twice
+            flash("Code already sent")
+            return render_template('reset_password.html', title="Password Reset", code_hidden="false", button="Submit", email=email)
+        except AttributeError: # unregistered email
+            flash("User not found")
+            return redirect(url_for('reset_password'))
+        except Exception: # any other error mostly a connection tiemout in sending the mail
+            flash(f"Email not sent. Check your internet connection and try again")
+            return redirect(url_for('reset_password'))
+    else:
+        return render_template("reset_password.html", title="Password Reset", button="Get Code", code_hidden="true")
+
+
+@app.route("/new-password", methods=["POST", "GET"])
+def new_password():
+    # Set a new password after entering correct password
+    if request.method == "POST":
+        try:
+            email = request.args.get('email')
+            password = request.form['password']
+            user = Admins.query.filter(Admins.email == email).first()
+            hashed_password = sha256_crypt.hash(password)
+            user.adm_password = hashed_password
+            db.session.commit()
+            msg = Message(f'Hello {user.adm_name}', sender='escapistcyber@gmail.com',
+                          recipients=[user.email])
+            msg.body = f"You have successfully reset your password"
+            mail.send(msg)
+            flash("Password reset successfully")
+            return redirect(url_for('login'))
+        except Exception:
+            flash("User did not request reset code")
+            return redirect(url_for('reset_password'))
+    else:
+        return render_template('newPassword.html', title="New Password")
+
 
 @app.route("/signup", methods=["POST", "GET"])
 def adminregister():
     if request.method == "POST":
         name = request.form["name"].capitalize()
         username = request.form["username"].capitalize()
-        mail = username.lower() + '@mdfcs.co'
         password = sha256_crypt.encrypt(request.form["password"])
 
         found_user = Admins.query.filter_by(adm_username=username).first()
@@ -108,12 +131,11 @@ def adminregister():
             flash("Username already taken")
             return render_template("adminsignup.html", title="Signup")
         else:
-            usr = Admins(username, name, mail, password)
+            usr = Admins(username, name, password)
             db.session.add(usr)
             db.session.commit()
 
             flash("registration successful! login with credentials")
-            flash(f'your email address is: {mail}')
             return redirect(url_for("login"))
     else:
         return render_template("adminsignup.html", title="Signup")
@@ -132,7 +154,6 @@ def login():
             user_password = found_user.adm_password
 
             if found_user and sha256_crypt.verify(password, user_password):
-
                 session["password"] = user_password
                 flash("login successful!")
                 return redirect(url_for("home"))
@@ -140,10 +161,10 @@ def login():
                 flash("Incorrect username Password combination")
                 return render_template("adminsignin.html",title = "Signin")
         except Exception as e:
-            flash("User not found ")
+            flash(f"User not found {e}")
             return render_template("adminsignin.html",title = "Signin")
     else:
-        if logged_in() == logged_in:
+        if logged_in():
             flash("Already logged in")
             return redirect(url_for("home"))
         return render_template("adminsignin.html",title = "Signin")
@@ -151,8 +172,8 @@ def login():
 
 @app.route("/adminhome")
 def home():
-    if logged_in() == logged_in:
-        return render_template("home.html",title = "Home")
+    if logged_in():
+        return render_template("home.html",title="Home",username=logged_user())
     else:
         return redirect(url_for('login'))
 
@@ -165,7 +186,7 @@ def page_not_found(error):
 
 @app.route("/register", methods=["POST", "GET"])
 def clerkregistration():
-    if logged_in() == logged_in:
+    if logged_in():
         def assignid():
             search = Clerks.query.count()  # check if table has items
             if search:
@@ -185,26 +206,29 @@ def clerkregistration():
             fname = request.form["f-name"].capitalize()
             sname = request.form["s-name"].capitalize()
             address = request.form["address"].upper()
-            email = clerk_id.lower() + '@mdfcs.co'
+            clerk_email = request.form["email"].lower()
             uname = email
             phone = request.form["phone"]
             password = sha256_crypt.encrypt(phone)
             found_clerk = Clerks.query.filter_by(clerk_id=clerk_id).first()
             if found_clerk:
-                return render_template("clerkregistration.html",title = "Registration")
+                return render_template("clerkregistration.html",title = "Registration", username=logged_user())
             else:
-                usr = Clerks(clerk_id, fname, sname, email, address, phone)
+                usr = Clerks(clerk_id, fname, sname, clerk_email, address, phone, True)
                 clrk = ClerkPortal(uname, clerk_id, password)
                 db.session.add(usr)
                 db.session.add(clrk)
                 db.session.commit()
-
-                flash("registration successful!")
-                flash(f"clerk id is: {clerk_id} and email is: {email}")
-                return redirect(url_for("viewclerks"))
+                try:
+                    msg = Message(f'Hello {sname}', sender='escapistcyber@gmail.com', recipients=[clerk_email])
+                    msg.body = f"Registration as a Mdfcs clerk successful.\nYour ID is {clerk_id} and will be used generally everywhere.\nFor the web portal, use tour email {clerk_email} and your password which is your phone number\nOnce you enter the details you will be prompted to change your password.\n\nWelcome."
+                    mail.send(msg)
+                finally:
+                    flash(f"Registration of {clerk_id} successful!")
+                    return redirect(url_for("viewclerks"))
 
         else:
-            return render_template("clerkregistration.html",title = "Registration")
+            return render_template("clerkregistration.html",title = "Registration", username=logged_user())
     else:
         flash("You need to login first")
         return redirect(url_for("login"))
@@ -212,20 +236,20 @@ def clerkregistration():
 
 @app.route('/viewclerks', methods=["POST", "GET"])
 def viewclerks():
-    if logged_in() == logged_in:
+    if logged_in():
 
         if request.method == 'POST':
             c_id = request.form["id"].capitalize()
             search = f'%{c_id}%'
-            result = Clerks.query.filter(Clerks.clerk_id.like(search)).all()
+            result = Clerks.query.filter(and_((Clerks.clerk_id.like(search)), (Clerks.working == True))).all()
             if result:
-                return render_template("viewclerks.html",title = "Registered clerks", result=result)
+                return render_template("viewclerks.html",title = "Registered clerks", result=result, username=logged_user())
             else:
                 flash("Search Item Not Found")
-                return render_template("viewclerks.html",title = "Registered clerks")
+                return render_template("viewclerks.html",title = "Registered clerks", username=logged_user())
         else:
-            result = Clerks.query.all()  # get all table elements
-            return render_template("viewclerks.html",title = "Registered clerks", result=result)
+            result = Clerks.query.filter(Clerks.working == True).all()  # get all table elements
+            return render_template("viewclerks.html",title = "Registered clerks", result=result, username=logged_user())
     else:
         flash(f"You need to login first")
         return redirect(url_for("login"))
@@ -233,16 +257,16 @@ def viewclerks():
 
 @app.route('/viewattendance', methods=["POST", "GET"])
 def viewattendance():
-    if logged_in() == logged_in:
+    if logged_in():
         if request.method == 'POST':
             c_id = request.form["id"].capitalize()
             view = db.session.query(Clerks, Attendance).join(Attendance, Clerks.clerk_id == Attendance.clerk_id).filter(
-                Clerks.clerk_id.like(f'%{c_id}%')).all()
-            return render_template("ClerksAttendanceSummary.html", title = "Attendance summary", result=view)
+                and_((Clerks.clerk_id.like(f'%{c_id}%')), (Clerks.working == True))).all()
+            return render_template("ClerksAttendanceSummary.html", title = "Attendance summary", result=view, username=logged_user())
         else:
-            view = db.session.query(Clerks, Attendance).join(Attendance, Clerks.clerk_id == Attendance.clerk_id).all()
+            view = db.session.query(Clerks, Attendance).join(Attendance, Clerks.clerk_id == Attendance.clerk_id).filter(Clerks.working == True).all()
             # get all table elements
-            return render_template("ClerksAttendanceSummary.html", title = "Attendance summary", result=view)
+            return render_template("ClerksAttendanceSummary.html", title = "Attendance summary", result=view, username=logged_user())
     else:
         flash("You need to login first")
         return redirect(url_for("login"))
@@ -250,96 +274,136 @@ def viewattendance():
 
 @app.route("/delete", methods=["POST", "GET"])
 def deleterecords():
-    if logged_in() == logged_in:
+    if logged_in():
         all_clerks = Clerks.query.filter(Clerks.working == True).all()
         if request.method == "POST":
             c_id = request.form["id"].capitalize()
             clerkfound = Clerks.query.filter(and_(Clerks.clerk_id.like(f'%{c_id}%' )), (Clerks.working == True)).all()
             if clerkfound:
-                return render_template("delete_clerk.html", title = "Delete", result=clerkfound)
+                return render_template("delete_clerk.html", title = "Delete", result=clerkfound, username=logged_user())
             else:
                 flash("Requested id not found")
-                return render_template("delete_clerk.html", title = "Delete", result=all_clerks)
+                return render_template("delete_clerk.html", title = "Delete", result=all_clerks, username=logged_user())
         else:
-            return render_template("delete_clerk.html", title = "Delete", result=all_clerks)
+            return render_template("delete_clerk.html", title = "Delete", result=all_clerks, username=logged_user())
     else:
         return redirect(url_for("login"))
 
 
 @app.route("/deactivate", methods=["POST"])
 def deactivaterecords():
-    if logged_in() == logged_in:
+    if logged_in():
         data = request.get_json()
         c_id = data['value']
         clerk = Clerks.query.filter_by(clerk_id=c_id).first()
-        clerk.working = False
+        if clerk.working is True:
+            clerk.working = False
+            action = "Deactivated"
+        else:
+            clerk.working = True
+            action = "Reactivated"
         db.session.commit()
-        return render_template("delete_clerk.html")
+        msg = Message(f'Hello {clerk.clerk_sname}', sender='escapistcyber@gmail.com', recipients=[clerk.email])
+        msg.body = f"You have been {action}"
+        mail.send(msg)
+        return f"Clerk {clerk.clerk_id} {action}"
+    else:
+        return "Timed Out Login First!"
+
+
+@app.route("/deactivated", methods=["POST", "GET"])
+def deactivated():
+    if logged_in():
+        all_clerks = Clerks.query.filter(Clerks.working == False).all()
+        if request.method == "POST":
+            c_id = request.form["id"].capitalize()
+            clerkfound = Clerks.query.filter(and_(Clerks.clerk_id.like(f'%{c_id}%')), (Clerks.working == False)).all()
+            if clerkfound:
+                return render_template("deactivated.html", title="Inactive", result=clerkfound, username=logged_user())
+            else:
+                flash("Requested id not found")
+                return render_template("deactivated.html", title="Inactive", result=all_clerks, username=logged_user())
+        else:
+            return render_template("deactivated.html", title="Inactive", result=all_clerks, username=logged_user())
     else:
         return redirect(url_for("login"))
 
 
-@app.route("/signout")
-def adminsignout():
-    if logged_in() == logged_in:
-        session.pop("username", None)
-        return redirect(url_for("login"))
+@app.route("/payroll", methods=["POST", "GET"])
+def payroll():
+    if logged_in():
+        if request.method == "POST":
+            query_month = request.form["month"]
+            query_id = request.form["id"]
+            records = db.session.query(Clerks, Payroll).join(Payroll, Clerks.clerk_id == Payroll.clerk_id)\
+                .filter(or_((Payroll.month_year.like(f"{query_month}%")), (Payroll.clerk_id.like(f"%{query_id}%")))).all()
+            return render_template("payroll.html", title="Payroll", pay_roll=records, username=logged_user())
+        else:
+            pay_roll = db.session.query(Clerks, Payroll).join(Payroll, Clerks.clerk_id == Payroll.clerk_id).order_by(
+                Payroll.month_year.asc()).all()
+            return render_template("payroll.html", title="Payroll", pay_roll=pay_roll, username=logged_user())
     else:
         return redirect(url_for("login"))
 
 
 @app.route("/genarate", methods=["POST", "GET"])
 def Generate_Payroll():
-    if request.method == "POST":
-        month = request.form["month"]
-        year = request.form["year"]
-        month_year = f"{month}-{year}"
-        Payrate = int(request.form["pay-rate"])
-        clerk_attendance = Attendance.query.with_entities(Attendance.total_time, Attendance.clerk_id,
-                                                          extract('month', Attendance.date).label('month'), extract('year', Attendance.date).label('year')).filter(
-            extract('month', Attendance.date) == month, extract('year', Attendance.date) == year).all()
-
-        clerk_hours = {}
-        for attendance in clerk_attendance:
-            clerk_id = attendance.clerk_id
-            total_hours = attendance.total_time
-
-            # Update the total hours worked for this clerk
-            if clerk_id not in clerk_hours:
-                clerk_hours[clerk_id] = 0
-
-            clerk_hours[clerk_id] += total_hours if total_hours is not None else 0
-        for clerk_id, worked_hours in clerk_hours.items():
-            worked_hours = float(format(worked_hours, '.2f'))
-            total_pay = worked_hours * Payrate
-            clerk_id_month_year = f"{clerk_id}_{month_year}"
-            payroll = Payroll(clerk_id_month_year,clerk_id,month_year,worked_hours,Payrate,total_pay)
-            db.session.add(payroll)
-        try:
-            db.session.commit()
-            flash(f"Payroll for the peiod {month_year} has been generated")
-        except IntegrityError:
-            flash("Already Generated")
-        return render_template("CreatePayroll.html")
-    else:
-        return render_template("CreatePayroll.html")
-
-
-@app.route("/payroll", methods=["POST", "GET"])
-def payroll():
-    if logged_in() == logged_in:
+    if logged_in():
         if request.method == "POST":
-            query_month = request.form["month"]
-            query_id = request.form["id"]
-            records = db.session.query(Clerks, Payroll).join(Payroll, Clerks.clerk_id == Payroll.clerk_id)\
-                .filter(or_((Payroll.month_year == query_month), (Payroll.clerk_id.like(f"%{query_id}%")))).all()
-            return render_template("payroll.html", title="Payroll", pay_roll=records)
+            month = request.form["month"]
+            year = request.form["year"]
+            month_year = f"{month}-{year}"
+            Payrate = int(request.form["pay-rate"])
+            try:
+                clerk_attendance = Attendance.query.filter(extract('month', Attendance.date) == month, extract('year', Attendance.date) == year).all()
+                if len(clerk_attendance) > 0:
+                    clerk_hours = {}
+                    for attendance in clerk_attendance:
+                        clerk_id = attendance.clerk_id
+                        total_hours = attendance.total_time
+
+                        # Update the total hours worked for this clerk
+                        if clerk_id not in clerk_hours:
+                            clerk_hours[clerk_id] = 0
+
+                        clerk_hours[clerk_id] += total_hours if total_hours is not None else 0
+
+                    for clerk_id, worked_hours in clerk_hours.items():
+                        worked_hours = float(format(worked_hours, '.2f'))
+                        total_pay = float(format(worked_hours * Payrate, '.2f'))
+                        clerk_id_month_year = f"{clerk_id}_{month_year}"
+                        payroll = Payroll(clerk_id_month_year,clerk_id,month_year,worked_hours,Payrate,total_pay)
+
+                        db.session.add(payroll)
+                    emails = []
+                    records = Clerks.query.all()
+                    for record in records:
+                        emails.append(record.email)
+                    msg = Message(f'Hello, ', sender='escapistcyber@gmail.com', recipients=emails)
+                    msg.body = f"Payroll for the period {month_year} has been generated.\ncheck your portal for details."
+                    mail.send(msg)
+                    db.session.commit()
+                    flash(f"Payroll for the peiod {month_year} has been generated")
+                else:
+                    flash(f"No records found for the period {month_year}")
+            except IntegrityError:
+                flash("Already Generated")
+            return render_template("CreatePayroll.html")
         else:
-            pay_roll = db.session.query(Clerks, Payroll).join(Payroll, Clerks.clerk_id == Payroll.clerk_id).order_by(
-                Payroll.month_year.asc()).all()
-            return render_template("payroll.html", title="Payroll", pay_roll=pay_roll)
+            return render_template("CreatePayroll.html")
+    else:
+        return redirect(url_for('login'))
+
+
+@app.route("/signout")
+def signout():
+    if logged_in():
+        session.pop("username", None)
+        session.pop("password", None)
+        return redirect(url_for("login"))
     else:
         return redirect(url_for("login"))
+
 
 
 if __name__ == "__main__":

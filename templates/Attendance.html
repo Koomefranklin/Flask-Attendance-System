@@ -1,7 +1,9 @@
 <!DOCTYPE html>
-<html lang="">
+{# Page for marking of clerk attendance #}
+<html lang="en">
     <head>
     <link rel="stylesheet" href="{{url_for('static', filename='base_style.css')}} ">
+        <link rel="icon" href="{{ url_for('static', filename='icons/favicon.ico') }}">
     <script type="text/javascript" src="{{ url_for('static', filename='functions.js') }}"></script>
     <script type="text/javascript">
         setInterval(updateTime, 1000);
@@ -11,13 +13,13 @@
     <title>{{ title }}</title>
     </head>
     <body>
+	 <div class="overlay">	
         {% block navbar %}
-            <div class="top-nav" id="top-nav">
-            <a href="{{url_for('checkin')}}">CHECK-IN</a>
-            <a href="{{url_for('checkout')}}">CHECK-OUT</a>
-            </div>
+            <header id="top-nav">
+                Clerk Attendance
+            </header>
         {% endblock %}
-        <div class="overlay">
+       
         {% with messages = get_flashed_messages() %}
         {% if messages %}
             {% for msg in messages %}
@@ -25,12 +27,14 @@
             {% endfor %}
         {% endif %}
         {% endwith %}
-        <div class="attendance-form">
-            <form action = "#" method = "POST">
-                <label for="id">Input ID to {{ title }}</label>
-                <input type = "text" name = "id" id="id" autofocus><br>
-                <button type="submit">{{ title }}</button>
-            </form>
+        <div class="attendance">
+            <div class="attendance-form">
+                <form action = "#" method = "POST">
+                    <label for="id">Input ID to Fill Attendance</label>
+                    <input type = "text" name = "id" id="id" autofocus><br>
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
         </div>
         <div class="date">
             <span id="date"></span><br>

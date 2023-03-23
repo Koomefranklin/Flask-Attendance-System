@@ -1,16 +1,19 @@
-{% extends "Admin_base.html" %}
+{% extends "Admin_base.html" %} {# Use the Admin_base page as base for this page #}
 {% block navbar %}
-    <div class="top-nav" id="top-nav">MDFCS Admin Signin</div>
+    {# Overwrite the contents of the nav bar from the base #}
+    <header class="top-nav" id="top-nav">MDFCS Admin Signin</header>
 {% endblock %}
 {% block content %}
 <div class = "login-form">
     <form action="#" method ="POST">
         <label for="username">Username</label>
-        <input type = "text" name = "username" id="username" required autofocus><br>
+        <input type = "text" name = "username" id="username" required autofocus>
         <label for="password">Password</label>
-        <input type = "password" name = "password" id="password" required><br>
-        <br>
+        <input type = "password" name = "password" id="password" required>
+        <input type="checkbox" name="visibility" id="visibility" onclick="showPassword()" style="display: none">
+        <label for="visibility" style="cursor: pointer;">Show Password</label>
         <button type = "submit">Sign in</button>
+        <a href="{{ url_for('reset_password') }}">Forgot password?</a>
     </form>
 </div>
 {% endblock %}

@@ -3,15 +3,20 @@
 
 {% endblock %}
 {% block navbar %}
-    <div class="top-nav" id="top-nav">MDFCS Admin Home</div>
+    <header id="top-nav">
+        MDFCS Admin Home
+        <span id="logged-user"><i class="fa fa-user"></i> {{ username }}</span>
+        <a href = "{{url_for('signout')}}" id="signout" hidden="hidden">Signout</a>
+        <script type="text/javascript">logout()</script>
+    </header>
 {% endblock %}
 {% block content %}
     <div class="links">
         <a href="{{ url_for('clerkregistration') }}">Register new clerk</a>
         <a href = "{{url_for('viewclerks')}}" >View Registered Clerks</a><br>
         <a href = "{{url_for('viewattendance')}}" >View clerk Attendance summary</a>
-        <a href = "{{url_for('deleterecords')}}" >Delete Clerk Records</a>
+        <a href = "{{url_for('deleterecords')}}" >Deactivate Clerk</a>
+        <a href="{{ url_for('deactivated') }}">Deactivated Clerks</a>
         <a href="{{url_for('payroll')}}">Payroll</a>
-        <a href = "{{url_for('adminsignout')}}" >Signout</a>
     </div>
 {% endblock %}

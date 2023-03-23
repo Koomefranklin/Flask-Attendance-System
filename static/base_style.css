@@ -1,3 +1,4 @@
+/* Main page styling */
 html, body {
      min-height: 100%;
 }
@@ -10,30 +11,44 @@ body{
     opacity: 75%;
     color-scheme: dark;
 }
+
+/* Adding overlay on the body of the page */
 .overlay {
     background-color: rgba(0, 0, 0, 0.733);
     position: fixed;
-    margin-top: 50px;
     top: 0;
     right: 0;
     left: 0;
     bottom: 0;
     overflow-y: auto;
 }
-.top-nav {
+
+/* Defining the  top navbar */
+header {
     background-color: darkcyan;
     color: white;
-    position: fixed;
+    position: sticky;
     top: 0;
     display: flex;
+    flex-wrap: wrap;
     justify-content:center;
     font-size: 35px;
     overflow-x: hidden;
     width: 100%;
-    height: available;
+    min-height: 50px;
     left: 0;
 }
-.top-nav a {
+/* Logged in user section */
+header span {
+    margin-left: 10px;
+    padding: 14px 16px;
+    font-size: large;
+    background-color: burlywood;
+    color: black;
+    cursor: pointer;
+}
+/* Links in the nav bar */
+header a {
     float: left;
     color: #f2f2f2;
     text-align: center;
@@ -42,32 +57,66 @@ body{
     font-weight: bold;
     font-size: 20px;
 }
-.top-nav .active {
-  background-color: white;
-  color: darkcyan;
-}
-.top-nav a:hover {
+header a:hover {
     background: none;
     color: black;
     border-radius: 20px;
     text-decoration: underline;
 }
+header .active {
+  background-color: white;
+  color: darkcyan;
+}
 
+/* Short alert message from flask */
 .flash {
     color: green;
     font-style: normal;
     font-weight: normal;
     font-family: monospace;
+    background-color: white;
+    border-radius: 8px;
+    max-width: 500px;
+    margin: auto;
 }
+#scroll {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    border-radius: 50%;
+}
+
+/*Custom alert and confirm boxes*/
+#confirm-box {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+.custom-alert {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    padding: 20px;
+    background-color: #f1f1f1;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 10px #ccc;
+    text-align: center;
+    z-index: 9999;
+}
+
+/* heading */
 h1{font-weight: bolder;
     font-family: sans-serif;
 }
-img.logo {
-    width: 50px;
-    display: none;
-    margin: 5px auto;
-    border-radius: 8px;
-}
+
+/* Table and table elements styling */
 table{
     border:1px;
     border-collapse: collapse;
@@ -98,13 +147,14 @@ caption {
     font-weight: bold;
     color:white;
 }
+
+/* Forms and form elements properties */
 .login-form{
     margin: 100px auto auto;
 }
 .attendance-form {
     margin: 150px auto auto;
 }
-
 form{
     max-width: 500px;
     margin: 10px auto;
@@ -117,19 +167,31 @@ form{
     display: flex;
     flex-direction: column;
 }
+form a {
+    color: black;
+}
+.attendance {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.attendance-form {
+    flex: 50%;
+}
 label {
     display: flex;
     flex-direction: row;
     margin: 10px;
     justify-content: center;
 }
-input {
+input, select {
     border-radius: 10px;
     font-size: 30px;
     width: 80%;
 }
 input:disabled {
-    background-color: grey;
+    background-color: white;
 }
 .row-buttons {
     display: flex;
@@ -170,7 +232,13 @@ input[type="checkbox"] {
     display: flex;
     height: 100%;
     width: 100%;
+    background-color: black;
 }
+input[type="checkbox"]:active {
+	background-color: black;
+}
+
+/* Container for Time and date */
 .date {
     font-family: 'Digital-7 Mono', monospace;
     font-weight: bold;
@@ -184,6 +252,8 @@ input[type="checkbox"] {
 time {
     font-size: 50px;
 }
+
+/* Admin homepage links*/
 .links {
     background-color: darkcyan;
     border-radius: 10px;
@@ -209,6 +279,7 @@ time {
     text-decoration: underline;
 }
 
+/*Guide for new clerks on how to sign in*/
 .steps {
     text-decoration: none;
     font-weight: bold;
@@ -233,6 +304,8 @@ time {
     text-align: left;
     margin: 10px;
 }
+
+/*Containers for verification of correct password pattern and matching password*/
 .matching-password {
     text-align: left;
     margin: 0 10px;

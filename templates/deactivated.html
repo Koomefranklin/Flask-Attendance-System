@@ -15,6 +15,7 @@
         <td>Select</td>
         <td>Clerk ID</td>
         <td>Clerk Name</td>
+        <td>Email</td>
         <td>Address</td>
         <td>Phone Number</td>
     </tr>
@@ -23,6 +24,7 @@
             <td><input type="checkbox" id="{{ record.clerk_id }}" value="{{ record.clerk_id }}" form="footer"></td>
             <td><label for="{{ record.clerk_id }}" class="clerk-id">{{record.clerk_id}}</label></td>
             <td>{{record.clerk_sname + " " + record.clerk_fname}}</td>
+            <td>{{record.email}}</td>
             <td>{{record.clerk_address}}</td>
             <td>{{record.clerk_phone}}</td>
         </tr>
@@ -30,8 +32,8 @@
     </table>
     <div class="select-form">
     <button type="reset" id="unselect" form="footer">Unselect all</button>
-    <button type="submit" id="deactivate" form="footer">Deactivate</button>
+    <button type="submit" id="reactivate" form="footer">Reactivate</button>
     </div>
-    <script type="text/javascript">deactivate();
+    <script type="text/javascript">reactivate();
     </script>
 {% endblock %}
