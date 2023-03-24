@@ -124,9 +124,9 @@ function select(action) {
                     },
                     body: JSON.stringify({value: selected_id})
                 })
-                .then(function(response) {
+                    .then(function(response) {
                       return response.text(); // Get the response text
-                })
+                    })
                     .then(function(text) {
                         // create a new div element
                         const alertBox = document.createElement("div");
@@ -149,8 +149,7 @@ function select(action) {
 
                         // add the alert box to the body of the page
                         document.body.appendChild(alertBox);
-
-                })
+                    })
                     .catch(function(error) {
                         console.error('Error:', error);
                 });

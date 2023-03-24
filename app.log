@@ -2740,3 +2740,478 @@
 2023-03-23 21:25:43,666 INFO:  * Restarting with stat
 2023-03-23 21:25:44,359 WARNING:  * Debugger is active!
 2023-03-23 21:25:44,359 INFO:  * Debugger PIN: 871-240-181
+2023-03-23 22:16:15,059 INFO: 127.0.0.1 - - [23/Mar/2023 22:16:15] "[32mGET / HTTP/1.1[0m" 302 -
+2023-03-23 22:16:15,093 INFO: 127.0.0.1 - - [23/Mar/2023 22:16:15] "[32mGET /adminhome HTTP/1.1[0m" 302 -
+2023-03-23 22:16:15,143 INFO: 127.0.0.1 - - [23/Mar/2023 22:16:15] "GET /signin HTTP/1.1" 200 -
+2023-03-23 22:16:15,339 INFO: 127.0.0.1 - - [23/Mar/2023 22:16:15] "GET /static/base_style.css HTTP/1.1" 200 -
+2023-03-23 22:16:15,348 INFO: 127.0.0.1 - - [23/Mar/2023 22:16:15] "GET /static/functions.js HTTP/1.1" 200 -
+2023-03-23 22:16:15,581 INFO: 127.0.0.1 - - [23/Mar/2023 22:16:15] "[36mGET /static/can.png HTTP/1.1[0m" 304 -
+2023-03-23 22:16:15,818 INFO: 127.0.0.1 - - [23/Mar/2023 22:16:15] "GET /static/icons/favicon.ico HTTP/1.1" 200 -
+2023-03-23 22:16:19,202 INFO: 127.0.0.1 - - [23/Mar/2023 22:16:19] "[32mPOST /signin HTTP/1.1[0m" 302 -
+2023-03-23 22:16:19,243 INFO: 127.0.0.1 - - [23/Mar/2023 22:16:19] "GET /adminhome HTTP/1.1" 200 -
+2023-03-23 22:16:19,433 INFO: 127.0.0.1 - - [23/Mar/2023 22:16:19] "GET /static/base_style.css HTTP/1.1" 200 -
+2023-03-23 22:16:19,442 INFO: 127.0.0.1 - - [23/Mar/2023 22:16:19] "[36mGET /static/functions.js HTTP/1.1[0m" 304 -
+2023-03-23 22:16:19,533 INFO: 127.0.0.1 - - [23/Mar/2023 22:16:19] "[36mGET /static/can.png HTTP/1.1[0m" 304 -
+2023-03-23 22:16:19,651 INFO: 127.0.0.1 - - [23/Mar/2023 22:16:19] "GET /static/icons/favicon.ico HTTP/1.1" 200 -
+2023-03-23 22:44:23,090 INFO: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5001
+2023-03-23 22:44:23,090 INFO: [33mPress CTRL+C to quit[0m
+2023-03-23 22:44:23,099 INFO:  * Restarting with stat
+2023-03-23 22:44:24,049 WARNING:  * Debugger is active!
+2023-03-23 22:44:24,070 INFO:  * Debugger PIN: 871-240-181
+2023-03-23 22:44:37,336 INFO: 127.0.0.1 - - [23/Mar/2023 22:44:37] "[32mGET / HTTP/1.1[0m" 302 -
+2023-03-23 22:44:37,407 INFO: 127.0.0.1 - - [23/Mar/2023 22:44:37] "GET /attendance HTTP/1.1" 200 -
+2023-03-23 22:44:37,708 INFO: 127.0.0.1 - - [23/Mar/2023 22:44:37] "[36mGET /static/functions.js HTTP/1.1[0m" 304 -
+2023-03-23 22:44:37,708 INFO: 127.0.0.1 - - [23/Mar/2023 22:44:37] "GET /static/base_style.css HTTP/1.1" 200 -
+2023-03-23 22:44:37,781 INFO: 127.0.0.1 - - [23/Mar/2023 22:44:37] "[36mGET /static/can.png HTTP/1.1[0m" 304 -
+2023-03-23 22:44:37,945 INFO: 127.0.0.1 - - [23/Mar/2023 22:44:37] "GET /static/icons/favicon.ico HTTP/1.1" 200 -
+2023-03-23 22:44:39,638 INFO: 127.0.0.1 - - [23/Mar/2023 22:44:39] "[32mGET / HTTP/1.1[0m" 302 -
+2023-03-23 22:44:39,661 INFO: 127.0.0.1 - - [23/Mar/2023 22:44:39] "GET /attendance HTTP/1.1" 200 -
+2023-03-23 22:44:39,846 INFO: 127.0.0.1 - - [23/Mar/2023 22:44:39] "[36mGET /static/base_style.css HTTP/1.1[0m" 304 -
+2023-03-23 22:44:39,860 INFO: 127.0.0.1 - - [23/Mar/2023 22:44:39] "[36mGET /static/functions.js HTTP/1.1[0m" 304 -
+2023-03-23 22:44:39,972 INFO: 127.0.0.1 - - [23/Mar/2023 22:44:39] "[36mGET /static/can.png HTTP/1.1[0m" 304 -
+2023-03-23 22:44:41,214 INFO: 127.0.0.1 - - [23/Mar/2023 22:44:41] "[32mGET / HTTP/1.1[0m" 302 -
+2023-03-23 22:44:41,244 INFO: 127.0.0.1 - - [23/Mar/2023 22:44:41] "GET /attendance HTTP/1.1" 200 -
+2023-03-23 22:44:41,455 INFO: 127.0.0.1 - - [23/Mar/2023 22:44:41] "[36mGET /static/base_style.css HTTP/1.1[0m" 304 -
+2023-03-23 22:44:41,471 INFO: 127.0.0.1 - - [23/Mar/2023 22:44:41] "[36mGET /static/functions.js HTTP/1.1[0m" 304 -
+2023-03-23 22:44:41,530 INFO: 127.0.0.1 - - [23/Mar/2023 22:44:41] "[36mGET /static/can.png HTTP/1.1[0m" 304 -
+2023-03-23 22:44:42,196 INFO: 127.0.0.1 - - [23/Mar/2023 22:44:42] "[32mGET / HTTP/1.1[0m" 302 -
+2023-03-23 22:44:42,219 INFO: 127.0.0.1 - - [23/Mar/2023 22:44:42] "GET /attendance HTTP/1.1" 200 -
+2023-03-23 22:44:42,436 INFO: 127.0.0.1 - - [23/Mar/2023 22:44:42] "[36mGET /static/base_style.css HTTP/1.1[0m" 304 -
+2023-03-23 22:44:42,444 INFO: 127.0.0.1 - - [23/Mar/2023 22:44:42] "[36mGET /static/functions.js HTTP/1.1[0m" 304 -
+2023-03-23 22:44:42,542 INFO: 127.0.0.1 - - [23/Mar/2023 22:44:42] "[36mGET /static/can.png HTTP/1.1[0m" 304 -
+2023-03-23 22:44:43,129 INFO: 127.0.0.1 - - [23/Mar/2023 22:44:43] "[32mGET / HTTP/1.1[0m" 302 -
+2023-03-23 22:44:43,194 INFO: 127.0.0.1 - - [23/Mar/2023 22:44:43] "GET /attendance HTTP/1.1" 200 -
+2023-03-23 22:44:43,422 INFO: 127.0.0.1 - - [23/Mar/2023 22:44:43] "[36mGET /static/base_style.css HTTP/1.1[0m" 304 -
+2023-03-23 22:44:43,425 INFO: 127.0.0.1 - - [23/Mar/2023 22:44:43] "[36mGET /static/functions.js HTTP/1.1[0m" 304 -
+2023-03-23 22:44:43,483 INFO: 127.0.0.1 - - [23/Mar/2023 22:44:43] "[36mGET /static/can.png HTTP/1.1[0m" 304 -
+2023-03-23 22:44:43,910 INFO: 127.0.0.1 - - [23/Mar/2023 22:44:43] "[32mGET / HTTP/1.1[0m" 302 -
+2023-03-23 22:44:43,947 INFO: 127.0.0.1 - - [23/Mar/2023 22:44:43] "GET /attendance HTTP/1.1" 200 -
+2023-03-23 22:44:44,128 INFO: 127.0.0.1 - - [23/Mar/2023 22:44:44] "[36mGET /static/base_style.css HTTP/1.1[0m" 304 -
+2023-03-23 22:44:44,135 INFO: 127.0.0.1 - - [23/Mar/2023 22:44:44] "[36mGET /static/functions.js HTTP/1.1[0m" 304 -
+2023-03-23 22:44:44,243 INFO: 127.0.0.1 - - [23/Mar/2023 22:44:44] "[36mGET /static/can.png HTTP/1.1[0m" 304 -
+2023-03-23 22:44:44,699 INFO: 127.0.0.1 - - [23/Mar/2023 22:44:44] "[32mGET / HTTP/1.1[0m" 302 -
+2023-03-23 22:44:44,727 INFO: 127.0.0.1 - - [23/Mar/2023 22:44:44] "GET /attendance HTTP/1.1" 200 -
+2023-03-23 22:44:44,868 INFO: 127.0.0.1 - - [23/Mar/2023 22:44:44] "[36mGET /static/base_style.css HTTP/1.1[0m" 304 -
+2023-03-23 22:44:44,910 INFO: 127.0.0.1 - - [23/Mar/2023 22:44:44] "[36mGET /static/functions.js HTTP/1.1[0m" 304 -
+2023-03-23 22:44:44,993 INFO: 127.0.0.1 - - [23/Mar/2023 22:44:44] "[36mGET /static/can.png HTTP/1.1[0m" 304 -
+2023-03-23 22:53:56,018 INFO:  * Detected change in '/home/frank/Documents/School Stuff/4.1/Project/system/Attendance.py', reloading
+2023-03-23 22:53:56,043 INFO:  * Detected change in '/home/frank/Documents/School Stuff/4.1/Project/system/Attendance.py', reloading
+2023-03-23 22:53:56,191 INFO:  * Restarting with stat
+2023-03-23 22:53:56,235 INFO:  * Restarting with stat
+2023-03-23 22:53:56,976 INFO:  * Detected change in '/home/frank/Documents/School Stuff/4.1/Project/system/Attendance.py', reloading
+2023-03-23 22:53:57,370 INFO:  * Restarting with stat
+2023-03-23 22:53:57,973 WARNING:  * Debugger is active!
+2023-03-23 22:53:57,985 INFO:  * Debugger PIN: 871-240-181
+2023-03-23 22:53:58,570 WARNING:  * Debugger is active!
+2023-03-23 22:53:58,570 INFO:  * Debugger PIN: 871-240-181
+2023-03-23 22:53:59,671 WARNING:  * Debugger is active!
+2023-03-23 22:53:59,672 INFO:  * Debugger PIN: 871-240-181
+2023-03-23 22:54:48,627 INFO: 127.0.0.1 - - [23/Mar/2023 22:54:48] "[32mGET / HTTP/1.1[0m" 302 -
+2023-03-23 22:54:48,692 INFO: 127.0.0.1 - - [23/Mar/2023 22:54:48] "GET /attendance HTTP/1.1" 200 -
+2023-03-23 22:54:48,895 INFO: 127.0.0.1 - - [23/Mar/2023 22:54:48] "GET /static/base_style.css HTTP/1.1" 200 -
+2023-03-23 22:54:48,900 INFO: 127.0.0.1 - - [23/Mar/2023 22:54:48] "GET /static/functions.js HTTP/1.1" 200 -
+2023-03-23 22:54:48,957 INFO: 127.0.0.1 - - [23/Mar/2023 22:54:48] "[36mGET /static/can.png HTTP/1.1[0m" 304 -
+2023-03-23 22:54:50,986 INFO: 127.0.0.1 - - [23/Mar/2023 22:54:50] "POST /attendance HTTP/1.1" 200 -
+2023-03-23 22:54:51,231 INFO: 127.0.0.1 - - [23/Mar/2023 22:54:51] "[36mGET /static/base_style.css HTTP/1.1[0m" 304 -
+2023-03-23 22:54:51,233 INFO: 127.0.0.1 - - [23/Mar/2023 22:54:51] "[36mGET /static/functions.js HTTP/1.1[0m" 304 -
+2023-03-23 22:54:51,324 INFO: 127.0.0.1 - - [23/Mar/2023 22:54:51] "[36mGET /static/can.png HTTP/1.1[0m" 304 -
+2023-03-23 22:54:57,356 INFO: 127.0.0.1 - - [23/Mar/2023 22:54:57] "POST /attendance HTTP/1.1" 200 -
+2023-03-23 22:54:57,536 INFO: 127.0.0.1 - - [23/Mar/2023 22:54:57] "[36mGET /static/base_style.css HTTP/1.1[0m" 304 -
+2023-03-23 22:54:57,537 INFO: 127.0.0.1 - - [23/Mar/2023 22:54:57] "[36mGET /static/functions.js HTTP/1.1[0m" 304 -
+2023-03-23 22:54:57,630 INFO: 127.0.0.1 - - [23/Mar/2023 22:54:57] "[36mGET /static/can.png HTTP/1.1[0m" 304 -
+2023-03-23 22:54:57,731 INFO: 127.0.0.1 - - [23/Mar/2023 22:54:57] "GET /static/icons/favicon.ico HTTP/1.1" 200 -
+2023-03-23 22:58:59,806 INFO: 127.0.0.1 - - [23/Mar/2023 22:58:59] "[35m[1mPOST /attendance HTTP/1.1[0m" 500 -
+2023-03-23 22:58:59,995 INFO: 127.0.0.1 - - [23/Mar/2023 22:58:59] "GET /attendance?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2023-03-23 22:59:00,004 INFO: 127.0.0.1 - - [23/Mar/2023 22:59:00] "GET /attendance?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2023-03-23 22:59:00,129 INFO: 127.0.0.1 - - [23/Mar/2023 22:59:00] "GET /attendance?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2023-03-23 23:00:46,878 INFO: 127.0.0.1 - - [23/Mar/2023 23:00:46] "[32mPOST /attendance HTTP/1.1[0m" 302 -
+2023-03-23 23:00:46,904 INFO: 127.0.0.1 - - [23/Mar/2023 23:00:46] "GET /attendance HTTP/1.1" 200 -
+2023-03-23 23:00:47,089 INFO: 127.0.0.1 - - [23/Mar/2023 23:00:47] "[36mGET /static/functions.js HTTP/1.1[0m" 304 -
+2023-03-23 23:00:47,091 INFO: 127.0.0.1 - - [23/Mar/2023 23:00:47] "[36mGET /static/base_style.css HTTP/1.1[0m" 304 -
+2023-03-23 23:00:47,157 INFO: 127.0.0.1 - - [23/Mar/2023 23:00:47] "[36mGET /static/can.png HTTP/1.1[0m" 304 -
+2023-03-23 23:04:00,696 INFO:  * Detected change in '/home/frank/Documents/School Stuff/4.1/Project/system/Attendance.py', reloading
+2023-03-23 23:04:00,704 INFO:  * Detected change in '/home/frank/Documents/School Stuff/4.1/Project/system/Attendance.py', reloading
+2023-03-23 23:04:00,930 INFO:  * Restarting with stat
+2023-03-23 23:04:00,948 INFO:  * Restarting with stat
+2023-03-23 23:04:01,281 INFO:  * Detected change in '/home/frank/Documents/School Stuff/4.1/Project/system/Attendance.py', reloading
+2023-03-23 23:04:01,721 INFO:  * Restarting with stat
+2023-03-23 23:04:02,894 WARNING:  * Debugger is active!
+2023-03-23 23:04:02,895 INFO:  * Debugger PIN: 871-240-181
+2023-03-23 23:04:04,429 WARNING:  * Debugger is active!
+2023-03-23 23:04:04,433 INFO:  * Debugger PIN: 871-240-181
+2023-03-23 23:04:04,675 WARNING:  * Debugger is active!
+2023-03-23 23:04:04,676 INFO:  * Debugger PIN: 871-240-181
+2023-03-23 23:04:06,027 INFO: 127.0.0.1 - - [23/Mar/2023 23:04:06] "[32mPOST /attendance HTTP/1.1[0m" 302 -
+2023-03-23 23:04:06,074 INFO: 127.0.0.1 - - [23/Mar/2023 23:04:06] "GET /attendance HTTP/1.1" 200 -
+2023-03-23 23:04:06,832 INFO: 127.0.0.1 - - [23/Mar/2023 23:04:06] "GET /static/functions.js HTTP/1.1" 200 -
+2023-03-23 23:04:06,841 INFO: 127.0.0.1 - - [23/Mar/2023 23:04:06] "GET /static/base_style.css HTTP/1.1" 200 -
+2023-03-23 23:04:07,170 INFO: 127.0.0.1 - - [23/Mar/2023 23:04:07] "[36mGET /static/can.png HTTP/1.1[0m" 304 -
+2023-03-23 23:04:17,577 INFO: 127.0.0.1 - - [23/Mar/2023 23:04:17] "GET /attendance HTTP/1.1" 200 -
+2023-03-23 23:09:42,621 INFO:  * Detected change in '/home/frank/Documents/School Stuff/4.1/Project/system/Attendance.py', reloading
+2023-03-23 23:09:42,748 INFO:  * Restarting with stat
+2023-03-23 23:09:42,874 INFO:  * Detected change in '/home/frank/Documents/School Stuff/4.1/Project/system/Attendance.py', reloading
+2023-03-23 23:09:42,879 INFO:  * Detected change in '/home/frank/Documents/School Stuff/4.1/Project/system/Attendance.py', reloading
+2023-03-23 23:09:43,128 INFO:  * Restarting with stat
+2023-03-23 23:09:43,133 INFO:  * Restarting with stat
+2023-03-23 23:09:44,753 WARNING:  * Debugger is active!
+2023-03-23 23:09:44,754 INFO:  * Debugger PIN: 871-240-181
+2023-03-23 23:09:44,881 WARNING:  * Debugger is active!
+2023-03-23 23:09:44,883 INFO:  * Debugger PIN: 871-240-181
+2023-03-23 23:09:45,016 WARNING:  * Debugger is active!
+2023-03-23 23:09:45,017 INFO:  * Debugger PIN: 871-240-181
+2023-03-23 23:09:51,800 INFO: 127.0.0.1 - - [23/Mar/2023 23:09:51] "[35m[1mPOST /attendance HTTP/1.1[0m" 500 -
+2023-03-23 23:09:52,298 INFO: 127.0.0.1 - - [23/Mar/2023 23:09:52] "GET /attendance?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2023-03-23 23:09:52,299 INFO: 127.0.0.1 - - [23/Mar/2023 23:09:52] "GET /attendance?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2023-03-23 23:09:52,358 INFO: 127.0.0.1 - - [23/Mar/2023 23:09:52] "GET /attendance?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2023-03-23 23:18:13,947 INFO: 127.0.0.1 - - [23/Mar/2023 23:18:13] "[35m[1mPOST /attendance HTTP/1.1[0m" 500 -
+2023-03-23 23:18:14,233 INFO: 127.0.0.1 - - [23/Mar/2023 23:18:14] "[36mGET /attendance?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2023-03-23 23:18:14,236 INFO: 127.0.0.1 - - [23/Mar/2023 23:18:14] "GET /attendance?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2023-03-23 23:18:14,357 INFO: 127.0.0.1 - - [23/Mar/2023 23:18:14] "[36mGET /attendance?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2023-03-23 23:19:00,607 INFO: 127.0.0.1 - - [23/Mar/2023 23:19:00] "POST /attendance HTTP/1.1" 200 -
+2023-03-23 23:19:00,933 INFO: 127.0.0.1 - - [23/Mar/2023 23:19:00] "GET /static/functions.js HTTP/1.1" 200 -
+2023-03-23 23:19:00,934 INFO: 127.0.0.1 - - [23/Mar/2023 23:19:00] "GET /static/base_style.css HTTP/1.1" 200 -
+2023-03-23 23:19:01,056 INFO: 127.0.0.1 - - [23/Mar/2023 23:19:01] "[36mGET /static/can.png HTTP/1.1[0m" 304 -
+2023-03-23 23:21:37,556 INFO:  * Detected change in '/home/frank/Documents/School Stuff/4.1/Project/system/Attendance.py', reloading
+2023-03-23 23:21:37,585 INFO:  * Detected change in '/home/frank/Documents/School Stuff/4.1/Project/system/Attendance.py', reloading
+2023-03-23 23:21:37,888 INFO:  * Detected change in '/home/frank/Documents/School Stuff/4.1/Project/system/Attendance.py', reloading
+2023-03-23 23:21:37,888 INFO:  * Restarting with stat
+2023-03-23 23:21:37,899 INFO:  * Restarting with stat
+2023-03-23 23:21:38,304 INFO:  * Restarting with stat
+2023-03-23 23:21:39,906 WARNING:  * Debugger is active!
+2023-03-23 23:21:39,906 INFO:  * Debugger PIN: 871-240-181
+2023-03-23 23:21:39,999 WARNING:  * Debugger is active!
+2023-03-23 23:21:40,000 INFO:  * Debugger PIN: 871-240-181
+2023-03-23 23:21:40,290 WARNING:  * Debugger is active!
+2023-03-23 23:21:40,291 INFO:  * Debugger PIN: 871-240-181
+2023-03-23 23:21:47,714 INFO: 127.0.0.1 - - [23/Mar/2023 23:21:47] "[32mPOST /attendance HTTP/1.1[0m" 302 -
+2023-03-23 23:21:47,795 INFO: 127.0.0.1 - - [23/Mar/2023 23:21:47] "GET /attendance HTTP/1.1" 200 -
+2023-03-23 23:21:48,176 INFO: 127.0.0.1 - - [23/Mar/2023 23:21:48] "[36mGET /static/base_style.css HTTP/1.1[0m" 304 -
+2023-03-23 23:21:48,178 INFO: 127.0.0.1 - - [23/Mar/2023 23:21:48] "[36mGET /static/functions.js HTTP/1.1[0m" 304 -
+2023-03-23 23:21:48,314 INFO: 127.0.0.1 - - [23/Mar/2023 23:21:48] "[36mGET /static/can.png HTTP/1.1[0m" 304 -
+2023-03-23 23:21:52,364 INFO: 127.0.0.1 - - [23/Mar/2023 23:21:52] "GET /attendance HTTP/1.1" 200 -
+2023-03-23 23:21:52,635 INFO: 127.0.0.1 - - [23/Mar/2023 23:21:52] "[36mGET /static/base_style.css HTTP/1.1[0m" 304 -
+2023-03-23 23:21:52,636 INFO: 127.0.0.1 - - [23/Mar/2023 23:21:52] "[36mGET /static/functions.js HTTP/1.1[0m" 304 -
+2023-03-23 23:21:52,734 INFO: 127.0.0.1 - - [23/Mar/2023 23:21:52] "[36mGET /static/can.png HTTP/1.1[0m" 304 -
+2023-03-23 23:21:54,558 INFO: 127.0.0.1 - - [23/Mar/2023 23:21:54] "GET /attendance HTTP/1.1" 200 -
+2023-03-23 23:21:54,800 INFO: 127.0.0.1 - - [23/Mar/2023 23:21:54] "[36mGET /static/base_style.css HTTP/1.1[0m" 304 -
+2023-03-23 23:21:54,812 INFO: 127.0.0.1 - - [23/Mar/2023 23:21:54] "[36mGET /static/functions.js HTTP/1.1[0m" 304 -
+2023-03-23 23:21:54,873 INFO: 127.0.0.1 - - [23/Mar/2023 23:21:54] "[36mGET /static/can.png HTTP/1.1[0m" 304 -
+2023-03-23 23:21:55,849 INFO: 127.0.0.1 - - [23/Mar/2023 23:21:55] "GET /attendance HTTP/1.1" 200 -
+2023-03-23 23:21:56,082 INFO: 127.0.0.1 - - [23/Mar/2023 23:21:56] "[36mGET /static/base_style.css HTTP/1.1[0m" 304 -
+2023-03-23 23:21:56,086 INFO: 127.0.0.1 - - [23/Mar/2023 23:21:56] "[36mGET /static/functions.js HTTP/1.1[0m" 304 -
+2023-03-23 23:21:56,460 INFO: 127.0.0.1 - - [23/Mar/2023 23:21:56] "[36mGET /static/can.png HTTP/1.1[0m" 304 -
+2023-03-23 23:21:56,939 INFO: 127.0.0.1 - - [23/Mar/2023 23:21:56] "GET /attendance HTTP/1.1" 200 -
+2023-03-23 23:21:57,238 INFO: 127.0.0.1 - - [23/Mar/2023 23:21:57] "[36mGET /static/functions.js HTTP/1.1[0m" 304 -
+2023-03-23 23:21:57,238 INFO: 127.0.0.1 - - [23/Mar/2023 23:21:57] "[36mGET /static/base_style.css HTTP/1.1[0m" 304 -
+2023-03-23 23:21:57,352 INFO: 127.0.0.1 - - [23/Mar/2023 23:21:57] "GET /static/base_style.css HTTP/1.1" 200 -
+2023-03-23 23:21:57,355 INFO: 127.0.0.1 - - [23/Mar/2023 23:21:57] "GET /static/base_style.css HTTP/1.1" 200 -
+2023-03-23 23:21:57,485 INFO: 127.0.0.1 - - [23/Mar/2023 23:21:57] "[36mGET /static/can.png HTTP/1.1[0m" 304 -
+2023-03-23 23:21:58,216 INFO: 127.0.0.1 - - [23/Mar/2023 23:21:58] "GET /attendance HTTP/1.1" 200 -
+2023-03-23 23:21:58,491 INFO: 127.0.0.1 - - [23/Mar/2023 23:21:58] "[36mGET /static/base_style.css HTTP/1.1[0m" 304 -
+2023-03-23 23:21:58,499 INFO: 127.0.0.1 - - [23/Mar/2023 23:21:58] "[36mGET /static/functions.js HTTP/1.1[0m" 304 -
+2023-03-23 23:21:58,584 INFO: 127.0.0.1 - - [23/Mar/2023 23:21:58] "[36mGET /static/can.png HTTP/1.1[0m" 304 -
+2023-03-23 23:22:09,778 INFO: 127.0.0.1 - - [23/Mar/2023 23:22:09] "GET /attendance HTTP/1.1" 200 -
+2023-03-23 23:22:10,027 INFO: 127.0.0.1 - - [23/Mar/2023 23:22:10] "[36mGET /static/base_style.css HTTP/1.1[0m" 304 -
+2023-03-23 23:22:10,055 INFO: 127.0.0.1 - - [23/Mar/2023 23:22:10] "[36mGET /static/functions.js HTTP/1.1[0m" 304 -
+2023-03-23 23:22:10,289 INFO: 127.0.0.1 - - [23/Mar/2023 23:22:10] "[36mGET /static/can.png HTTP/1.1[0m" 304 -
+2023-03-23 23:27:51,489 INFO:  * Detected change in '/home/frank/Documents/School Stuff/4.1/Project/system/Attendance.py', reloading
+2023-03-23 23:27:51,640 INFO:  * Detected change in '/home/frank/Documents/School Stuff/4.1/Project/system/Attendance.py', reloading
+2023-03-23 23:27:51,655 INFO:  * Detected change in '/home/frank/Documents/School Stuff/4.1/Project/system/Attendance.py', reloading
+2023-03-23 23:27:51,692 INFO:  * Restarting with stat
+2023-03-23 23:27:52,056 INFO:  * Restarting with stat
+2023-03-23 23:27:52,485 INFO:  * Restarting with stat
+2023-03-23 23:27:54,010 WARNING:  * Debugger is active!
+2023-03-23 23:27:54,011 INFO:  * Debugger PIN: 871-240-181
+2023-03-23 23:27:54,333 INFO: 127.0.0.1 - - [23/Mar/2023 23:27:54] "GET /attendance HTTP/1.1" 200 -
+2023-03-23 23:27:55,259 WARNING:  * Debugger is active!
+2023-03-23 23:27:55,260 INFO:  * Debugger PIN: 871-240-181
+2023-03-23 23:27:55,780 WARNING:  * Debugger is active!
+2023-03-23 23:27:55,792 INFO:  * Debugger PIN: 871-240-181
+2023-03-23 23:27:56,500 INFO: 127.0.0.1 - - [23/Mar/2023 23:27:56] "GET /static/functions.js HTTP/1.1" 200 -
+2023-03-23 23:27:56,538 INFO: 127.0.0.1 - - [23/Mar/2023 23:27:56] "[36mGET /static/base_style.css HTTP/1.1[0m" 304 -
+2023-03-23 23:27:57,895 INFO: 127.0.0.1 - - [23/Mar/2023 23:27:57] "[36mGET /static/can.png HTTP/1.1[0m" 304 -
+2023-03-23 23:36:04,073 INFO: 127.0.0.1 - - [23/Mar/2023 23:36:04] "GET /attendance HTTP/1.1" 200 -
+2023-03-23 23:36:05,708 INFO: 127.0.0.1 - - [23/Mar/2023 23:36:05] "GET /static/base_style.css HTTP/1.1" 200 -
+2023-03-23 23:36:05,741 INFO: 127.0.0.1 - - [23/Mar/2023 23:36:05] "GET /static/functions.js HTTP/1.1" 200 -
+2023-03-23 23:36:07,089 INFO: 127.0.0.1 - - [23/Mar/2023 23:36:07] "[36mGET /static/can.png HTTP/1.1[0m" 304 -
+2023-03-23 23:36:15,194 INFO: 127.0.0.1 - - [23/Mar/2023 23:36:15] "POST /attendance HTTP/1.1" 200 -
+2023-03-23 23:36:15,844 INFO: 127.0.0.1 - - [23/Mar/2023 23:36:15] "[36mGET /static/base_style.css HTTP/1.1[0m" 304 -
+2023-03-23 23:36:15,852 INFO: 127.0.0.1 - - [23/Mar/2023 23:36:15] "[36mGET /static/functions.js HTTP/1.1[0m" 304 -
+2023-03-23 23:36:16,340 INFO: 127.0.0.1 - - [23/Mar/2023 23:36:16] "[36mGET /static/can.png HTTP/1.1[0m" 304 -
+2023-03-23 23:36:29,385 INFO: 127.0.0.1 - - [23/Mar/2023 23:36:29] "[32mPOST /attendance HTTP/1.1[0m" 302 -
+2023-03-23 23:36:29,429 INFO: 127.0.0.1 - - [23/Mar/2023 23:36:29] "GET /attendance HTTP/1.1" 200 -
+2023-03-23 23:36:29,833 INFO: 127.0.0.1 - - [23/Mar/2023 23:36:29] "[36mGET /static/base_style.css HTTP/1.1[0m" 304 -
+2023-03-23 23:36:29,835 INFO: 127.0.0.1 - - [23/Mar/2023 23:36:29] "[36mGET /static/functions.js HTTP/1.1[0m" 304 -
+2023-03-23 23:36:30,245 INFO: 127.0.0.1 - - [23/Mar/2023 23:36:30] "[36mGET /static/can.png HTTP/1.1[0m" 304 -
+2023-03-24 00:43:48,357 INFO: 127.0.0.1 - - [24/Mar/2023 00:43:48] "[32mGET /signout HTTP/1.1[0m" 302 -
+2023-03-24 00:43:48,432 INFO: 127.0.0.1 - - [24/Mar/2023 00:43:48] "GET /clerksignin HTTP/1.1" 200 -
+2023-03-24 00:43:48,744 INFO: 127.0.0.1 - - [24/Mar/2023 00:43:48] "GET /static/base_style.css HTTP/1.1" 200 -
+2023-03-24 00:43:48,775 INFO: 127.0.0.1 - - [24/Mar/2023 00:43:48] "GET /static/functions.js HTTP/1.1" 200 -
+2023-03-24 00:43:48,864 INFO: 127.0.0.1 - - [24/Mar/2023 00:43:48] "[36mGET /static/can.png HTTP/1.1[0m" 304 -
+2023-03-24 00:43:49,665 INFO: 127.0.0.1 - - [24/Mar/2023 00:43:49] "GET /static/icons/favicon.ico HTTP/1.1" 200 -
+2023-03-24 00:43:53,444 INFO: 127.0.0.1 - - [24/Mar/2023 00:43:53] "[32mPOST /clerksignin HTTP/1.1[0m" 302 -
+2023-03-24 00:43:53,546 INFO: 127.0.0.1 - - [24/Mar/2023 00:43:53] "GET /home HTTP/1.1" 200 -
+2023-03-24 00:43:53,799 INFO: 127.0.0.1 - - [24/Mar/2023 00:43:53] "[36mGET /static/base_style.css HTTP/1.1[0m" 304 -
+2023-03-24 00:43:53,803 INFO: 127.0.0.1 - - [24/Mar/2023 00:43:53] "[36mGET /static/functions.js HTTP/1.1[0m" 304 -
+2023-03-24 00:43:53,940 INFO: 127.0.0.1 - - [24/Mar/2023 00:43:53] "[36mGET /static/can.png HTTP/1.1[0m" 304 -
+2023-03-24 00:43:57,064 INFO: 127.0.0.1 - - [24/Mar/2023 00:43:57] "GET /changePassword HTTP/1.1" 200 -
+2023-03-24 00:43:57,311 INFO: 127.0.0.1 - - [24/Mar/2023 00:43:57] "[36mGET /static/base_style.css HTTP/1.1[0m" 304 -
+2023-03-24 00:43:57,317 INFO: 127.0.0.1 - - [24/Mar/2023 00:43:57] "[36mGET /static/functions.js HTTP/1.1[0m" 304 -
+2023-03-24 00:43:57,444 INFO: 127.0.0.1 - - [24/Mar/2023 00:43:57] "[36mGET /static/can.png HTTP/1.1[0m" 304 -
+2023-03-24 00:44:04,339 INFO: 127.0.0.1 - - [24/Mar/2023 00:44:04] "[32mGET /signout HTTP/1.1[0m" 302 -
+2023-03-24 00:44:04,366 INFO: 127.0.0.1 - - [24/Mar/2023 00:44:04] "GET /clerksignin HTTP/1.1" 200 -
+2023-03-24 00:44:04,709 INFO: 127.0.0.1 - - [24/Mar/2023 00:44:04] "[36mGET /static/base_style.css HTTP/1.1[0m" 304 -
+2023-03-24 00:44:04,711 INFO: 127.0.0.1 - - [24/Mar/2023 00:44:04] "[36mGET /static/functions.js HTTP/1.1[0m" 304 -
+2023-03-24 00:44:04,845 INFO: 127.0.0.1 - - [24/Mar/2023 00:44:04] "[36mGET /static/can.png HTTP/1.1[0m" 304 -
+2023-03-24 00:44:08,044 INFO: 127.0.0.1 - - [24/Mar/2023 00:44:08] "GET /reset-password HTTP/1.1" 200 -
+2023-03-24 00:44:08,306 INFO: 127.0.0.1 - - [24/Mar/2023 00:44:08] "[36mGET /static/base_style.css HTTP/1.1[0m" 304 -
+2023-03-24 00:44:08,316 INFO: 127.0.0.1 - - [24/Mar/2023 00:44:08] "[36mGET /static/functions.js HTTP/1.1[0m" 304 -
+2023-03-24 00:44:08,387 INFO: 127.0.0.1 - - [24/Mar/2023 00:44:08] "[36mGET /static/can.png HTTP/1.1[0m" 304 -
+2023-03-24 00:44:24,240 INFO: 127.0.0.1 - - [24/Mar/2023 00:44:24] "POST /reset-password HTTP/1.1" 200 -
+2023-03-24 00:44:24,476 INFO: 127.0.0.1 - - [24/Mar/2023 00:44:24] "[36mGET /static/base_style.css HTTP/1.1[0m" 304 -
+2023-03-24 00:44:24,491 INFO: 127.0.0.1 - - [24/Mar/2023 00:44:24] "[36mGET /static/functions.js HTTP/1.1[0m" 304 -
+2023-03-24 00:44:24,592 INFO: 127.0.0.1 - - [24/Mar/2023 00:44:24] "[36mGET /static/can.png HTTP/1.1[0m" 304 -
+2023-03-24 00:46:32,801 INFO:  * Detected change in '/home/frank/Documents/School Stuff/4.1/Project/system/Clerk Portal.py', reloading
+2023-03-24 00:46:32,956 INFO:  * Restarting with stat
+2023-03-24 00:46:32,987 INFO:  * Detected change in '/home/frank/Documents/School Stuff/4.1/Project/system/Clerk Portal.py', reloading
+2023-03-24 00:46:32,997 INFO:  * Detected change in '/home/frank/Documents/School Stuff/4.1/Project/system/Clerk Portal.py', reloading
+2023-03-24 00:46:33,193 INFO:  * Restarting with stat
+2023-03-24 00:46:33,224 INFO:  * Restarting with stat
+2023-03-24 00:46:35,275 WARNING:  * Debugger is active!
+2023-03-24 00:46:35,276 INFO:  * Debugger PIN: 871-240-181
+2023-03-24 00:46:35,277 WARNING:  * Debugger is active!
+2023-03-24 00:46:35,278 INFO:  * Debugger PIN: 871-240-181
+2023-03-24 00:46:35,301 WARNING:  * Debugger is active!
+2023-03-24 00:46:35,301 INFO:  * Debugger PIN: 871-240-181
+2023-03-24 00:46:42,298 INFO: 127.0.0.1 - - [24/Mar/2023 00:46:42] "[32mPOST /reset-password HTTP/1.1[0m" 302 -
+2023-03-24 00:46:42,345 INFO: 127.0.0.1 - - [24/Mar/2023 00:46:42] "GET /reset-password HTTP/1.1" 200 -
+2023-03-24 00:46:42,599 INFO: 127.0.0.1 - - [24/Mar/2023 00:46:42] "[36mGET /static/base_style.css HTTP/1.1[0m" 304 -
+2023-03-24 00:46:42,612 INFO: 127.0.0.1 - - [24/Mar/2023 00:46:42] "[36mGET /static/functions.js HTTP/1.1[0m" 304 -
+2023-03-24 00:46:42,715 INFO: 127.0.0.1 - - [24/Mar/2023 00:46:42] "[36mGET /static/can.png HTTP/1.1[0m" 304 -
+2023-03-24 00:46:58,743 INFO: 127.0.0.1 - - [24/Mar/2023 00:46:58] "POST /reset-password HTTP/1.1" 200 -
+2023-03-24 00:46:58,995 INFO: 127.0.0.1 - - [24/Mar/2023 00:46:58] "[36mGET /static/base_style.css HTTP/1.1[0m" 304 -
+2023-03-24 00:46:58,997 INFO: 127.0.0.1 - - [24/Mar/2023 00:46:58] "[36mGET /static/functions.js HTTP/1.1[0m" 304 -
+2023-03-24 00:46:59,085 INFO: 127.0.0.1 - - [24/Mar/2023 00:46:59] "[36mGET /static/can.png HTTP/1.1[0m" 304 -
+2023-03-24 00:47:51,052 INFO: 127.0.0.1 - - [24/Mar/2023 00:47:51] "[32mPOST /reset-password HTTP/1.1[0m" 302 -
+2023-03-24 00:47:51,088 INFO: 127.0.0.1 - - [24/Mar/2023 00:47:51] "GET /reset-password HTTP/1.1" 200 -
+2023-03-24 00:47:51,336 INFO: 127.0.0.1 - - [24/Mar/2023 00:47:51] "[36mGET /static/base_style.css HTTP/1.1[0m" 304 -
+2023-03-24 00:47:51,345 INFO: 127.0.0.1 - - [24/Mar/2023 00:47:51] "[36mGET /static/functions.js HTTP/1.1[0m" 304 -
+2023-03-24 00:47:51,441 INFO: 127.0.0.1 - - [24/Mar/2023 00:47:51] "[36mGET /static/can.png HTTP/1.1[0m" 304 -
+2023-03-24 00:48:25,660 INFO: 127.0.0.1 - - [24/Mar/2023 00:48:25] "POST /reset-password HTTP/1.1" 200 -
+2023-03-24 00:48:25,897 INFO: 127.0.0.1 - - [24/Mar/2023 00:48:25] "[36mGET /static/base_style.css HTTP/1.1[0m" 304 -
+2023-03-24 00:48:25,897 INFO: 127.0.0.1 - - [24/Mar/2023 00:48:25] "[36mGET /static/functions.js HTTP/1.1[0m" 304 -
+2023-03-24 00:48:25,993 INFO: 127.0.0.1 - - [24/Mar/2023 00:48:25] "[36mGET /static/can.png HTTP/1.1[0m" 304 -
+2023-03-24 00:49:29,047 INFO: 127.0.0.1 - - [24/Mar/2023 00:49:29] "GET /reset-password HTTP/1.1" 200 -
+2023-03-24 00:50:37,589 INFO: 127.0.0.1 - - [24/Mar/2023 00:50:37] "[32mPOST /reset-password HTTP/1.1[0m" 302 -
+2023-03-24 00:50:37,641 INFO: 127.0.0.1 - - [24/Mar/2023 00:50:37] "GET /new-password?email=kirujaleon%40gmail.com HTTP/1.1" 200 -
+2023-03-24 00:50:38,006 INFO: 127.0.0.1 - - [24/Mar/2023 00:50:38] "[36mGET /static/base_style.css HTTP/1.1[0m" 304 -
+2023-03-24 00:50:38,013 INFO: 127.0.0.1 - - [24/Mar/2023 00:50:38] "[36mGET /static/functions.js HTTP/1.1[0m" 304 -
+2023-03-24 00:50:38,253 INFO: 127.0.0.1 - - [24/Mar/2023 00:50:38] "[36mGET /static/can.png HTTP/1.1[0m" 304 -
+2023-03-24 00:51:16,308 INFO: 127.0.0.1 - - [24/Mar/2023 00:51:16] "[32mPOST /new-password?email=kirujaleon%40gmail.com HTTP/1.1[0m" 302 -
+2023-03-24 00:51:16,360 INFO: 127.0.0.1 - - [24/Mar/2023 00:51:16] "GET /clerksignin HTTP/1.1" 200 -
+2023-03-24 00:51:16,679 INFO: 127.0.0.1 - - [24/Mar/2023 00:51:16] "[36mGET /static/base_style.css HTTP/1.1[0m" 304 -
+2023-03-24 00:51:16,681 INFO: 127.0.0.1 - - [24/Mar/2023 00:51:16] "[36mGET /static/functions.js HTTP/1.1[0m" 304 -
+2023-03-24 00:51:17,053 INFO: 127.0.0.1 - - [24/Mar/2023 00:51:17] "[36mGET /static/can.png HTTP/1.1[0m" 304 -
+2023-03-24 00:51:29,439 INFO: 127.0.0.1 - - [24/Mar/2023 00:51:29] "GET /reset-password HTTP/1.1" 200 -
+2023-03-24 00:51:29,654 INFO: 127.0.0.1 - - [24/Mar/2023 00:51:29] "[36mGET /static/base_style.css HTTP/1.1[0m" 304 -
+2023-03-24 00:51:29,656 INFO: 127.0.0.1 - - [24/Mar/2023 00:51:29] "[36mGET /static/functions.js HTTP/1.1[0m" 304 -
+2023-03-24 00:51:29,758 INFO: 127.0.0.1 - - [24/Mar/2023 00:51:29] "[36mGET /static/can.png HTTP/1.1[0m" 304 -
+2023-03-24 00:51:51,327 INFO: 127.0.0.1 - - [24/Mar/2023 00:51:51] "POST /reset-password HTTP/1.1" 200 -
+2023-03-24 00:51:51,619 INFO: 127.0.0.1 - - [24/Mar/2023 00:51:51] "[36mGET /static/base_style.css HTTP/1.1[0m" 304 -
+2023-03-24 00:51:51,624 INFO: 127.0.0.1 - - [24/Mar/2023 00:51:51] "[36mGET /static/functions.js HTTP/1.1[0m" 304 -
+2023-03-24 00:51:51,710 INFO: 127.0.0.1 - - [24/Mar/2023 00:51:51] "[36mGET /static/can.png HTTP/1.1[0m" 304 -
+2023-03-24 00:52:43,190 INFO: 127.0.0.1 - - [24/Mar/2023 00:52:43] "[32mPOST /reset-password HTTP/1.1[0m" 302 -
+2023-03-24 00:52:43,229 INFO: 127.0.0.1 - - [24/Mar/2023 00:52:43] "GET /new-password?email=kirujaleon%40gmail.com HTTP/1.1" 200 -
+2023-03-24 00:52:43,472 INFO: 127.0.0.1 - - [24/Mar/2023 00:52:43] "[36mGET /static/base_style.css HTTP/1.1[0m" 304 -
+2023-03-24 00:52:43,484 INFO: 127.0.0.1 - - [24/Mar/2023 00:52:43] "[36mGET /static/functions.js HTTP/1.1[0m" 304 -
+2023-03-24 00:52:43,572 INFO: 127.0.0.1 - - [24/Mar/2023 00:52:43] "[36mGET /static/can.png HTTP/1.1[0m" 304 -
+2023-03-24 00:52:54,693 INFO: 127.0.0.1 - - [24/Mar/2023 00:52:54] "[32mPOST /new-password?email=kirujaleon%40gmail.com HTTP/1.1[0m" 302 -
+2023-03-24 00:52:54,728 INFO: 127.0.0.1 - - [24/Mar/2023 00:52:54] "GET /clerksignin HTTP/1.1" 200 -
+2023-03-24 00:52:54,933 INFO: 127.0.0.1 - - [24/Mar/2023 00:52:54] "[36mGET /static/base_style.css HTTP/1.1[0m" 304 -
+2023-03-24 00:52:54,935 INFO: 127.0.0.1 - - [24/Mar/2023 00:52:54] "[36mGET /static/functions.js HTTP/1.1[0m" 304 -
+2023-03-24 00:52:55,041 INFO: 127.0.0.1 - - [24/Mar/2023 00:52:55] "[36mGET /static/can.png HTTP/1.1[0m" 304 -
+2023-03-24 03:43:02,038 INFO:  * Detected change in '/home/frank/Documents/School Stuff/4.1/Project/system/Attendance.py', reloading
+2023-03-24 03:43:02,197 INFO:  * Detected change in '/home/frank/Documents/School Stuff/4.1/Project/system/Attendance.py', reloading
+2023-03-24 03:43:02,896 INFO:  * Detected change in '/home/frank/Documents/School Stuff/4.1/Project/system/Attendance.py', reloading
+2023-03-24 03:43:05,277 INFO:  * Restarting with stat
+2023-03-24 03:43:05,218 INFO:  * Restarting with stat
+2023-03-24 03:43:05,265 INFO:  * Restarting with stat
+2023-03-24 03:43:09,875 WARNING:  * Debugger is active!
+2023-03-24 03:43:09,882 WARNING:  * Debugger is active!
+2023-03-24 03:43:09,883 WARNING:  * Debugger is active!
+2023-03-24 03:43:09,901 INFO:  * Debugger PIN: 871-240-181
+2023-03-24 03:43:09,901 INFO:  * Debugger PIN: 871-240-181
+2023-03-24 03:43:09,901 INFO:  * Debugger PIN: 871-240-181
+2023-03-24 03:43:11,535 INFO: 127.0.0.1 - - [24/Mar/2023 03:43:11] "GET /checkin HTTP/1.1" 200 -
+2023-03-24 03:43:14,294 INFO: 127.0.0.1 - - [24/Mar/2023 03:43:14] "GET /static/functions.js HTTP/1.1" 200 -
+2023-03-24 03:43:14,410 INFO: 127.0.0.1 - - [24/Mar/2023 03:43:14] "GET /static/base_style.css HTTP/1.1" 200 -
+2023-03-24 03:43:17,481 INFO: 127.0.0.1 - - [24/Mar/2023 03:43:17] "[36mGET /static/can.png HTTP/1.1[0m" 304 -
+2023-03-24 03:43:17,942 INFO: 127.0.0.1 - - [24/Mar/2023 03:43:17] "GET /static/icons/favicon.ico HTTP/1.1" 200 -
+2023-03-24 03:43:38,519 INFO: 127.0.0.1 - - [24/Mar/2023 03:43:38] "[35m[1mGET /checkout HTTP/1.1[0m" 500 -
+2023-03-24 03:43:38,685 INFO: 127.0.0.1 - - [24/Mar/2023 03:43:38] "GET /checkout?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2023-03-24 03:43:38,694 INFO: 127.0.0.1 - - [24/Mar/2023 03:43:38] "GET /checkout?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2023-03-24 03:43:39,518 INFO: 127.0.0.1 - - [24/Mar/2023 03:43:39] "GET /checkout?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2023-03-24 03:44:18,473 INFO:  * Detected change in '/home/frank/Documents/School Stuff/4.1/Project/system/Attendance.py', reloading
+2023-03-24 03:44:18,480 INFO:  * Detected change in '/home/frank/Documents/School Stuff/4.1/Project/system/Attendance.py', reloading
+2023-03-24 03:44:18,508 INFO:  * Detected change in '/home/frank/Documents/School Stuff/4.1/Project/system/Attendance.py', reloading
+2023-03-24 03:44:18,723 INFO:  * Restarting with stat
+2023-03-24 03:44:18,770 INFO:  * Restarting with stat
+2023-03-24 03:44:18,898 INFO:  * Restarting with stat
+2023-03-24 03:44:20,412 WARNING:  * Debugger is active!
+2023-03-24 03:44:20,413 INFO:  * Debugger PIN: 871-240-181
+2023-03-24 03:44:20,527 INFO: 127.0.0.1 - - [24/Mar/2023 03:44:20] "GET /checkout HTTP/1.1" 200 -
+2023-03-24 03:44:20,813 INFO: 127.0.0.1 - - [24/Mar/2023 03:44:20] "GET /static/base_style.css HTTP/1.1" 200 -
+2023-03-24 03:44:20,835 INFO: 127.0.0.1 - - [24/Mar/2023 03:44:20] "[36mGET /static/functions.js HTTP/1.1[0m" 304 -
+2023-03-24 03:44:21,075 INFO: 127.0.0.1 - - [24/Mar/2023 03:44:21] "[36mGET /static/can.png HTTP/1.1[0m" 304 -
+2023-03-24 03:44:21,260 WARNING:  * Debugger is active!
+2023-03-24 03:44:21,261 INFO:  * Debugger PIN: 871-240-181
+2023-03-24 03:44:21,302 WARNING:  * Debugger is active!
+2023-03-24 03:44:21,302 INFO:  * Debugger PIN: 871-240-181
+2023-03-24 03:44:30,791 INFO: 127.0.0.1 - - [24/Mar/2023 03:44:30] "POST /checkin HTTP/1.1" 200 -
+2023-03-24 03:44:30,947 INFO: 127.0.0.1 - - [24/Mar/2023 03:44:30] "[36mGET /static/base_style.css HTTP/1.1[0m" 304 -
+2023-03-24 03:44:30,951 INFO: 127.0.0.1 - - [24/Mar/2023 03:44:30] "[36mGET /static/functions.js HTTP/1.1[0m" 304 -
+2023-03-24 03:44:31,180 INFO: 127.0.0.1 - - [24/Mar/2023 03:44:31] "[36mGET /static/can.png HTTP/1.1[0m" 304 -
+2023-03-24 03:44:37,338 INFO: 127.0.0.1 - - [24/Mar/2023 03:44:37] "[32mPOST /checkout HTTP/1.1[0m" 302 -
+2023-03-24 03:44:37,365 INFO: 127.0.0.1 - - [24/Mar/2023 03:44:37] "GET /checkout HTTP/1.1" 200 -
+2023-03-24 03:44:37,554 INFO: 127.0.0.1 - - [24/Mar/2023 03:44:37] "GET /static/base_style.css HTTP/1.1" 200 -
+2023-03-24 03:44:37,556 INFO: 127.0.0.1 - - [24/Mar/2023 03:44:37] "[36mGET /static/functions.js HTTP/1.1[0m" 304 -
+2023-03-24 03:44:37,610 INFO: 127.0.0.1 - - [24/Mar/2023 03:44:37] "[36mGET /static/can.png HTTP/1.1[0m" 304 -
+2023-03-24 03:44:51,548 INFO: 127.0.0.1 - - [24/Mar/2023 03:44:51] "POST /checkout HTTP/1.1" 200 -
+2023-03-24 03:44:51,801 INFO: 127.0.0.1 - - [24/Mar/2023 03:44:51] "[36mGET /static/base_style.css HTTP/1.1[0m" 304 -
+2023-03-24 03:44:51,805 INFO: 127.0.0.1 - - [24/Mar/2023 03:44:51] "[36mGET /static/functions.js HTTP/1.1[0m" 304 -
+2023-03-24 03:44:51,874 INFO: 127.0.0.1 - - [24/Mar/2023 03:44:51] "[36mGET /static/can.png HTTP/1.1[0m" 304 -
+2023-03-24 03:45:02,178 INFO: 127.0.0.1 - - [24/Mar/2023 03:45:02] "[32mPOST /checkin HTTP/1.1[0m" 302 -
+2023-03-24 03:45:02,209 INFO: 127.0.0.1 - - [24/Mar/2023 03:45:02] "GET /checkin HTTP/1.1" 200 -
+2023-03-24 03:45:02,363 INFO: 127.0.0.1 - - [24/Mar/2023 03:45:02] "[36mGET /static/base_style.css HTTP/1.1[0m" 304 -
+2023-03-24 03:45:02,367 INFO: 127.0.0.1 - - [24/Mar/2023 03:45:02] "[36mGET /static/functions.js HTTP/1.1[0m" 304 -
+2023-03-24 03:45:02,546 INFO: 127.0.0.1 - - [24/Mar/2023 03:45:02] "[36mGET /static/can.png HTTP/1.1[0m" 304 -
+2023-03-24 03:47:43,545 INFO:  * Detected change in '/home/frank/Documents/School Stuff/4.1/Project/system/Attendance.py', reloading
+2023-03-24 03:47:43,550 INFO:  * Detected change in '/home/frank/Documents/School Stuff/4.1/Project/system/Attendance.py', reloading
+2023-03-24 03:47:43,755 INFO:  * Restarting with stat
+2023-03-24 03:47:43,759 INFO:  * Restarting with stat
+2023-03-24 03:47:44,081 INFO:  * Detected change in '/home/frank/Documents/School Stuff/4.1/Project/system/Attendance.py', reloading
+2023-03-24 03:47:44,349 INFO:  * Restarting with stat
+2023-03-24 03:47:45,740 WARNING:  * Debugger is active!
+2023-03-24 03:47:45,740 INFO:  * Debugger PIN: 871-240-181
+2023-03-24 03:47:45,871 WARNING:  * Debugger is active!
+2023-03-24 03:47:45,871 INFO:  * Debugger PIN: 871-240-181
+2023-03-24 03:47:46,103 WARNING:  * Debugger is active!
+2023-03-24 03:47:46,103 INFO:  * Debugger PIN: 871-240-181
+2023-03-24 03:47:49,899 INFO: 127.0.0.1 - - [24/Mar/2023 03:47:49] "POST /checkout HTTP/1.1" 200 -
+2023-03-24 03:47:50,103 INFO: 127.0.0.1 - - [24/Mar/2023 03:47:50] "[36mGET /static/base_style.css HTTP/1.1[0m" 304 -
+2023-03-24 03:47:50,110 INFO: 127.0.0.1 - - [24/Mar/2023 03:47:50] "[36mGET /static/functions.js HTTP/1.1[0m" 304 -
+2023-03-24 03:47:50,167 INFO: 127.0.0.1 - - [24/Mar/2023 03:47:50] "[36mGET /static/can.png HTTP/1.1[0m" 304 -
+2023-03-24 03:55:09,958 INFO: 127.0.0.1 - - [24/Mar/2023 03:55:09] "[32mPOST /clerksignin HTTP/1.1[0m" 302 -
+2023-03-24 03:55:10,084 INFO: 127.0.0.1 - - [24/Mar/2023 03:55:10] "GET /home HTTP/1.1" 200 -
+2023-03-24 03:55:10,386 INFO: 127.0.0.1 - - [24/Mar/2023 03:55:10] "GET /static/base_style.css HTTP/1.1" 200 -
+2023-03-24 03:55:10,404 INFO: 127.0.0.1 - - [24/Mar/2023 03:55:10] "[36mGET /static/functions.js HTTP/1.1[0m" 304 -
+2023-03-24 03:55:10,516 INFO: 127.0.0.1 - - [24/Mar/2023 03:55:10] "[36mGET /static/can.png HTTP/1.1[0m" 304 -
+2023-03-24 03:55:10,692 INFO: 127.0.0.1 - - [24/Mar/2023 03:55:10] "GET /static/icons/favicon.ico HTTP/1.1" 200 -
+2023-03-24 03:55:12,788 INFO: 127.0.0.1 - - [24/Mar/2023 03:55:12] "GET /attendancesummary HTTP/1.1" 200 -
+2023-03-24 03:55:12,970 INFO: 127.0.0.1 - - [24/Mar/2023 03:55:12] "[36mGET /static/base_style.css HTTP/1.1[0m" 304 -
+2023-03-24 03:55:12,973 INFO: 127.0.0.1 - - [24/Mar/2023 03:55:12] "[36mGET /static/functions.js HTTP/1.1[0m" 304 -
+2023-03-24 03:55:13,166 INFO: 127.0.0.1 - - [24/Mar/2023 03:55:13] "[36mGET /static/can.png HTTP/1.1[0m" 304 -
+2023-03-24 03:57:53,449 INFO: 127.0.0.1 - - [24/Mar/2023 03:57:53] "[32mGET /payroll HTTP/1.1[0m" 302 -
+2023-03-24 03:57:53,657 INFO: 127.0.0.1 - - [24/Mar/2023 03:57:53] "GET /signin HTTP/1.1" 200 -
+2023-03-24 03:57:55,005 INFO: 127.0.0.1 - - [24/Mar/2023 03:57:55] "GET /static/base_style.css HTTP/1.1" 200 -
+2023-03-24 03:57:55,007 INFO: 127.0.0.1 - - [24/Mar/2023 03:57:55] "GET /static/functions.js HTTP/1.1" 200 -
+2023-03-24 03:57:58,034 INFO: 127.0.0.1 - - [24/Mar/2023 03:57:58] "[36mGET /static/can.png HTTP/1.1[0m" 304 -
+2023-03-24 03:58:00,367 INFO: 127.0.0.1 - - [24/Mar/2023 03:58:00] "GET /static/icons/favicon.ico HTTP/1.1" 200 -
+2023-03-24 03:58:08,502 INFO: 127.0.0.1 - - [24/Mar/2023 03:58:08] "[32mPOST /signin HTTP/1.1[0m" 302 -
+2023-03-24 03:58:08,578 INFO: 127.0.0.1 - - [24/Mar/2023 03:58:08] "GET /adminhome HTTP/1.1" 200 -
+2023-03-24 03:58:08,949 INFO: 127.0.0.1 - - [24/Mar/2023 03:58:08] "GET /static/base_style.css HTTP/1.1" 200 -
+2023-03-24 03:58:08,960 INFO: 127.0.0.1 - - [24/Mar/2023 03:58:08] "[36mGET /static/functions.js HTTP/1.1[0m" 304 -
+2023-03-24 03:58:09,481 INFO: 127.0.0.1 - - [24/Mar/2023 03:58:09] "[36mGET /static/can.png HTTP/1.1[0m" 304 -
+2023-03-24 03:58:09,990 INFO: 127.0.0.1 - - [24/Mar/2023 03:58:09] "GET /static/icons/favicon.ico HTTP/1.1" 200 -
+2023-03-24 03:58:17,929 INFO: 127.0.0.1 - - [24/Mar/2023 03:58:17] "GET /payroll HTTP/1.1" 200 -
+2023-03-24 03:58:18,260 INFO: 127.0.0.1 - - [24/Mar/2023 03:58:18] "GET /static/base_style.css HTTP/1.1" 200 -
+2023-03-24 03:58:18,262 INFO: 127.0.0.1 - - [24/Mar/2023 03:58:18] "[36mGET /static/functions.js HTTP/1.1[0m" 304 -
+2023-03-24 03:58:18,332 INFO: 127.0.0.1 - - [24/Mar/2023 03:58:18] "[36mGET /static/can.png HTTP/1.1[0m" 304 -
+2023-03-24 03:58:22,400 INFO: 127.0.0.1 - - [24/Mar/2023 03:58:22] "GET /genarate HTTP/1.1" 200 -
+2023-03-24 03:58:22,527 INFO: 127.0.0.1 - - [24/Mar/2023 03:58:22] "GET /static/base_style.css HTTP/1.1" 200 -
+2023-03-24 03:58:22,533 INFO: 127.0.0.1 - - [24/Mar/2023 03:58:22] "[36mGET /static/functions.js HTTP/1.1[0m" 304 -
+2023-03-24 03:58:22,637 INFO: 127.0.0.1 - - [24/Mar/2023 03:58:22] "[36mGET /static/can.png HTTP/1.1[0m" 304 -
+2023-03-24 03:58:22,733 INFO: 127.0.0.1 - - [24/Mar/2023 03:58:22] "[32mGET /favicon.ico HTTP/1.1[0m" 302 -
+2023-03-24 03:58:23,005 INFO: 127.0.0.1 - - [24/Mar/2023 03:58:23] "GET /adminhome HTTP/1.1" 200 -
+2023-03-24 03:58:46,512 INFO: 127.0.0.1 - - [24/Mar/2023 03:58:46] "POST /genarate HTTP/1.1" 200 -
+2023-03-24 03:58:46,711 INFO: 127.0.0.1 - - [24/Mar/2023 03:58:46] "[36mGET /static/base_style.css HTTP/1.1[0m" 304 -
+2023-03-24 03:58:46,721 INFO: 127.0.0.1 - - [24/Mar/2023 03:58:46] "[36mGET /static/functions.js HTTP/1.1[0m" 304 -
+2023-03-24 03:58:46,761 INFO: 127.0.0.1 - - [24/Mar/2023 03:58:46] "[36mGET /static/can.png HTTP/1.1[0m" 304 -
+2023-03-24 03:58:47,000 INFO: 127.0.0.1 - - [24/Mar/2023 03:58:47] "GET /adminhome HTTP/1.1" 200 -
+2023-03-24 03:59:28,239 INFO: 127.0.0.1 - - [24/Mar/2023 03:59:28] "GET /payment HTTP/1.1" 200 -
+2023-03-24 03:59:28,528 INFO: 127.0.0.1 - - [24/Mar/2023 03:59:28] "GET /static/base_style.css HTTP/1.1" 200 -
+2023-03-24 03:59:28,532 INFO: 127.0.0.1 - - [24/Mar/2023 03:59:28] "GET /static/functions.js HTTP/1.1" 200 -
+2023-03-24 03:59:28,768 INFO: 127.0.0.1 - - [24/Mar/2023 03:59:28] "[36mGET /static/can.png HTTP/1.1[0m" 304 -
+2023-03-24 03:59:28,793 INFO: 127.0.0.1 - - [24/Mar/2023 03:59:28] "GET /static/icons/favicon.ico HTTP/1.1" 200 -
+2023-03-24 03:59:46,371 INFO: 127.0.0.1 - - [24/Mar/2023 03:59:46] "POST /payroll HTTP/1.1" 200 -
+2023-03-24 03:59:46,633 INFO: 127.0.0.1 - - [24/Mar/2023 03:59:46] "[36mGET /static/base_style.css HTTP/1.1[0m" 304 -
+2023-03-24 03:59:46,640 INFO: 127.0.0.1 - - [24/Mar/2023 03:59:46] "[36mGET /static/functions.js HTTP/1.1[0m" 304 -
+2023-03-24 03:59:46,687 INFO: 127.0.0.1 - - [24/Mar/2023 03:59:46] "[36mGET /static/can.png HTTP/1.1[0m" 304 -
+2023-03-24 03:59:46,893 INFO: 127.0.0.1 - - [24/Mar/2023 03:59:46] "GET /static/icons/favicon.ico HTTP/1.1" 200 -
+2023-03-24 05:00:13,364 INFO:  * Detected change in '/home/frank/Documents/School Stuff/4.1/Project/system/Restore.py', reloading
+2023-03-24 05:00:13,512 INFO:  * Detected change in '/home/frank/Documents/School Stuff/4.1/Project/system/Restore.py', reloading
+2023-03-24 05:00:13,523 INFO:  * Detected change in '/home/frank/Documents/School Stuff/4.1/Project/system/Restore.py', reloading
+2023-03-24 05:00:13,580 INFO:  * Restarting with stat
+2023-03-24 05:00:13,872 INFO:  * Restarting with stat
+2023-03-24 05:00:13,979 INFO:  * Restarting with stat
+2023-03-24 05:00:17,551 WARNING:  * Debugger is active!
+2023-03-24 05:00:17,556 WARNING:  * Debugger is active!
+2023-03-24 05:00:17,556 WARNING:  * Debugger is active!
+2023-03-24 05:00:17,581 INFO:  * Debugger PIN: 871-240-181
+2023-03-24 05:00:17,581 INFO:  * Debugger PIN: 871-240-181
+2023-03-24 05:00:17,581 INFO:  * Debugger PIN: 871-240-181
+2023-03-24 05:22:26,361 INFO:  * Detected change in '/home/frank/Documents/School Stuff/4.1/Project/system/Restore.py', reloading
+2023-03-24 05:22:26,371 INFO:  * Detected change in '/home/frank/Documents/School Stuff/4.1/Project/system/Restore.py', reloading
+2023-03-24 05:22:26,616 INFO:  * Restarting with stat
+2023-03-24 05:22:26,643 INFO:  * Restarting with stat
+2023-03-24 05:22:26,991 INFO:  * Detected change in '/home/frank/Documents/School Stuff/4.1/Project/system/Restore.py', reloading
+2023-03-24 05:22:27,531 INFO:  * Restarting with stat
+2023-03-24 05:22:28,828 WARNING:  * Debugger is active!
+2023-03-24 05:22:28,829 INFO:  * Debugger PIN: 871-240-181
+2023-03-24 05:22:29,357 WARNING:  * Debugger is active!
+2023-03-24 05:22:29,358 INFO:  * Debugger PIN: 871-240-181
+2023-03-24 05:22:29,741 WARNING:  * Debugger is active!
+2023-03-24 05:22:29,742 INFO:  * Debugger PIN: 871-240-181
+2023-03-24 05:24:07,720 INFO: 127.0.0.1 - - [24/Mar/2023 05:24:07] "[32mGET /viewclerks HTTP/1.1[0m" 302 -
+2023-03-24 05:24:07,856 INFO: 127.0.0.1 - - [24/Mar/2023 05:24:07] "GET /signin HTTP/1.1" 200 -
+2023-03-24 05:24:08,260 INFO: 127.0.0.1 - - [24/Mar/2023 05:24:08] "GET /static/base_style.css HTTP/1.1" 200 -
+2023-03-24 05:24:08,292 INFO: 127.0.0.1 - - [24/Mar/2023 05:24:08] "[36mGET /static/functions.js HTTP/1.1[0m" 304 -
+2023-03-24 05:24:08,434 INFO: 127.0.0.1 - - [24/Mar/2023 05:24:08] "[36mGET /static/can.png HTTP/1.1[0m" 304 -
+2023-03-24 05:24:08,849 INFO: 127.0.0.1 - - [24/Mar/2023 05:24:08] "GET /static/icons/favicon.ico HTTP/1.1" 200 -
+2023-03-24 05:24:12,064 INFO: 127.0.0.1 - - [24/Mar/2023 05:24:12] "[32mPOST /signin HTTP/1.1[0m" 302 -
+2023-03-24 05:24:12,121 INFO: 127.0.0.1 - - [24/Mar/2023 05:24:12] "GET /adminhome HTTP/1.1" 200 -
+2023-03-24 05:24:12,324 INFO: 127.0.0.1 - - [24/Mar/2023 05:24:12] "GET /static/base_style.css HTTP/1.1" 200 -
+2023-03-24 05:24:12,330 INFO: 127.0.0.1 - - [24/Mar/2023 05:24:12] "[36mGET /static/functions.js HTTP/1.1[0m" 304 -
+2023-03-24 05:24:12,389 INFO: 127.0.0.1 - - [24/Mar/2023 05:24:12] "[36mGET /static/can.png HTTP/1.1[0m" 304 -
+2023-03-24 05:24:16,547 INFO: 127.0.0.1 - - [24/Mar/2023 05:24:16] "GET /viewclerks HTTP/1.1" 200 -
+2023-03-24 05:24:16,759 INFO: 127.0.0.1 - - [24/Mar/2023 05:24:16] "[36mGET /static/base_style.css HTTP/1.1[0m" 304 -
+2023-03-24 05:24:16,764 INFO: 127.0.0.1 - - [24/Mar/2023 05:24:16] "[36mGET /static/functions.js HTTP/1.1[0m" 304 -
+2023-03-24 05:24:16,821 INFO: 127.0.0.1 - - [24/Mar/2023 05:24:16] "[36mGET /static/can.png HTTP/1.1[0m" 304 -
+2023-03-24 05:24:21,188 INFO: 127.0.0.1 - - [24/Mar/2023 05:24:21] "GET /adminhome HTTP/1.1" 200 -
+2023-03-24 05:24:21,401 INFO: 127.0.0.1 - - [24/Mar/2023 05:24:21] "GET /static/base_style.css HTTP/1.1" 200 -
+2023-03-24 05:24:21,430 INFO: 127.0.0.1 - - [24/Mar/2023 05:24:21] "[36mGET /static/functions.js HTTP/1.1[0m" 304 -
+2023-03-24 05:24:21,541 INFO: 127.0.0.1 - - [24/Mar/2023 05:24:21] "[36mGET /static/can.png HTTP/1.1[0m" 304 -
+2023-03-24 05:24:21,708 INFO: 127.0.0.1 - - [24/Mar/2023 05:24:21] "GET /static/icons/favicon.ico HTTP/1.1" 200 -
+2023-03-24 05:24:23,828 INFO: 127.0.0.1 - - [24/Mar/2023 05:24:23] "GET /register HTTP/1.1" 200 -
+2023-03-24 05:24:24,033 INFO: 127.0.0.1 - - [24/Mar/2023 05:24:24] "GET /static/base_style.css HTTP/1.1" 200 -
+2023-03-24 05:24:24,046 INFO: 127.0.0.1 - - [24/Mar/2023 05:24:24] "[36mGET /static/functions.js HTTP/1.1[0m" 304 -
+2023-03-24 05:24:24,116 INFO: 127.0.0.1 - - [24/Mar/2023 05:24:24] "[36mGET /static/can.png HTTP/1.1[0m" 304 -
+2023-03-24 05:24:24,250 INFO: 127.0.0.1 - - [24/Mar/2023 05:24:24] "GET /static/icons/favicon.ico HTTP/1.1" 200 -
+2023-03-24 05:24:26,579 INFO: 127.0.0.1 - - [24/Mar/2023 05:24:26] "GET /viewclerks HTTP/1.1" 200 -
+2023-03-24 05:24:26,814 INFO: 127.0.0.1 - - [24/Mar/2023 05:24:26] "[36mGET /static/base_style.css HTTP/1.1[0m" 304 -
+2023-03-24 05:24:26,818 INFO: 127.0.0.1 - - [24/Mar/2023 05:24:26] "[36mGET /static/functions.js HTTP/1.1[0m" 304 -
+2023-03-24 05:24:26,876 INFO: 127.0.0.1 - - [24/Mar/2023 05:24:26] "[36mGET /static/can.png HTTP/1.1[0m" 304 -
+2023-03-24 05:24:31,975 INFO: 127.0.0.1 - - [24/Mar/2023 05:24:31] "GET /viewattendance HTTP/1.1" 200 -
+2023-03-24 05:24:32,208 INFO: 127.0.0.1 - - [24/Mar/2023 05:24:32] "GET /static/base_style.css HTTP/1.1" 200 -
+2023-03-24 05:24:32,217 INFO: 127.0.0.1 - - [24/Mar/2023 05:24:32] "[36mGET /static/functions.js HTTP/1.1[0m" 304 -
+2023-03-24 05:24:32,299 INFO: 127.0.0.1 - - [24/Mar/2023 05:24:32] "[36mGET /static/can.png HTTP/1.1[0m" 304 -
+2023-03-24 05:24:32,620 INFO: 127.0.0.1 - - [24/Mar/2023 05:24:32] "GET /static/icons/favicon.ico HTTP/1.1" 200 -
+2023-03-24 05:24:48,674 INFO: 127.0.0.1 - - [24/Mar/2023 05:24:48] "GET /delete HTTP/1.1" 200 -
+2023-03-24 05:24:48,919 INFO: 127.0.0.1 - - [24/Mar/2023 05:24:48] "GET /static/base_style.css HTTP/1.1" 200 -
+2023-03-24 05:24:48,926 INFO: 127.0.0.1 - - [24/Mar/2023 05:24:48] "[36mGET /static/functions.js HTTP/1.1[0m" 304 -
+2023-03-24 05:24:48,982 INFO: 127.0.0.1 - - [24/Mar/2023 05:24:48] "[36mGET /static/can.png HTTP/1.1[0m" 304 -
+2023-03-24 05:24:53,184 INFO: 127.0.0.1 - - [24/Mar/2023 05:24:53] "GET /payroll HTTP/1.1" 200 -
+2023-03-24 05:24:53,418 INFO: 127.0.0.1 - - [24/Mar/2023 05:24:53] "[36mGET /static/base_style.css HTTP/1.1[0m" 304 -
+2023-03-24 05:24:53,420 INFO: 127.0.0.1 - - [24/Mar/2023 05:24:53] "[36mGET /static/functions.js HTTP/1.1[0m" 304 -
+2023-03-24 05:24:53,508 INFO: 127.0.0.1 - - [24/Mar/2023 05:24:53] "[36mGET /static/can.png HTTP/1.1[0m" 304 -

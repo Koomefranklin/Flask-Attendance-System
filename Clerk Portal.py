@@ -37,7 +37,7 @@ def reset_password():
                 msg = Message(f'Hello {user.clerk_sname}', sender='escapistcyber@gmail.com', recipients=[user.email])
                 msg.body = f"Request for password reset.\nEnter the code below to reset your password for the MDFCS " \
                            f"Admin Account.\n{code}\nThe code is valid for 15 minutes."
-                # mail.send(msg)
+                mail.send(msg)
                 request_time = datetime.datetime.now()
                 reset_details = ResetCodes(email, code, request_time)
                 db.session.add(reset_details)
