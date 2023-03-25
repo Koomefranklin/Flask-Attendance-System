@@ -1,3 +1,6 @@
+# Attendance System by Koome Franklin (Mburus)
+# https://www.koomefranklin.github.io
+
 from flask import Flask, request, redirect, url_for, flash, render_template, session
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy import extract, or_, and_
