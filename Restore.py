@@ -1,3 +1,6 @@
+# Attendance System by Koome Franklin (Mburus)
+# https://www.koomefranklin.github.io
+
 import datetime
 import shutil
 import time

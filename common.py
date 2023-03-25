@@ -13,19 +13,19 @@ import random
 import string
 
 app = Flask(__name__)
-app.secret_key = "MDFCS"
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///mdfcs.sqlite3'
+app.secret_key = "secretKey"
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///attendance.sqlite3'
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 app.permanent_session_lifetime = datetime.timedelta(minutes=5)
 logging.basicConfig(filename='app.log', level=logging.DEBUG,
                     format='%(asctime)s %(levelname)s: %(message)s')
 
-sending_email = 'escapistcyber@gmail.com'
+sending_email = 'sending@email.account'
 
 app.config['MAIL_SERVER'] = 'smtp.gmail.com'
 app.config['MAIL_PORT'] = 465
 app.config['MAIL_USERNAME'] = sending_email
-app.config['MAIL_PASSWORD'] = 'gdxbwxhbenvvkkux'
+app.config['MAIL_PASSWORD'] = 'password from google apps'
 app.config['MAIL_USE_TLS'] = False
 app.config['MAIL_USE_SSL'] = True
 

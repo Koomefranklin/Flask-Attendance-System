@@ -1,5 +1,6 @@
 #!/usr/bin/venv python
-
+# Attendance System by Koome Franklin (Mburus)
+# https://www.koomefranklin.github.io
 # Get the common configuration like app setup and database tables
 from common import *
 
