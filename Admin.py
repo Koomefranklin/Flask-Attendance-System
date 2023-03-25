@@ -53,7 +53,7 @@ def reset_password():
                 for i in range(6):
                     password_string += str(random.randint(0,9))
                 code = int(password_string) # Randomly generated code for password reset
-                msg = Message(f'Hello {user.adm_name}', sender='escapistcyber@gmail.com', recipients=[user.email])
+                msg = Message(f'Hello {user.adm_name}', sender=sending_email, recipients=[user.email])
                 msg.body = f"Request for password reset.\nEnter the code below to reset your password for the MDFCS Admin Account.\n{code}\nThe code is valid for 15 minutes."
                 mail.send(msg) # Send code via email
                 request_time = datetime.datetime.now()
@@ -106,7 +106,7 @@ def new_password():
             hashed_password = sha256_crypt.hash(password)
             user.adm_password = hashed_password
             db.session.commit()
-            msg = Message(f'Hello {user.adm_name}', sender='escapistcyber@gmail.com',
+            msg = Message(f'Hello {user.adm_name}', sender=sending_email,
                           recipients=[user.email])
             msg.body = f"You have successfully reset your password"
             mail.send(msg)
@@ -220,7 +220,7 @@ def clerkregistration():
                 db.session.add(clrk)
                 db.session.commit()
                 try:
-                    msg = Message(f'Hello {sname}', sender='escapistcyber@gmail.com', recipients=[clerk_email])
+                    msg = Message(f'Hello {sname}', sender=sending_email, recipients=[clerk_email])
                     msg.body = f"Registration as a Mdfcs clerk successful.\nYour ID is {clerk_id} and will be used generally everywhere.\nFor the web portal, use tour email {clerk_email} and your password which is your phone number\nOnce you enter the details you will be prompted to change your password.\n\nWelcome."
                     mail.send(msg)
                 finally:
@@ -303,7 +303,7 @@ def deactivaterecords():
             clerk.working = True
             action = "Reactivated"
         db.session.commit()
-        msg = Message(f'Hello {clerk.clerk_sname}', sender='escapistcyber@gmail.com', recipients=[clerk.email])
+        msg = Message(f'Hello {clerk.clerk_sname}', sender=sending_email, recipients=[clerk.email])
         msg.body = f"You have been {action}"
         mail.send(msg)
         return f"Clerk {clerk.clerk_id} {action}"
@@ -379,7 +379,7 @@ def Generate_Payroll():
                     records = Clerks.query.all()
                     for record in records:
                         emails.append(record.email)
-                    msg = Message(f'Hello, ', sender='escapistcyber@gmail.com', recipients=emails)
+                    msg = Message(f'Hello, ', sender=sending_email, recipients=emails)
                     msg.body = f"Payroll for the period {month_year} has been generated.\ncheck your portal for details."
                     mail.send(msg)
                     db.session.commit()

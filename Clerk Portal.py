@@ -34,7 +34,7 @@ def reset_password():
                 for i in range(6):
                     password_string += str(random.randint(0, 9))
                 code = int(password_string)
-                msg = Message(f'Hello {user.clerk_sname}', sender='escapistcyber@gmail.com', recipients=[user.email])
+                msg = Message(f'Hello {user.clerk_sname}', sender=sending_email, recipients=[user.email])
                 msg.body = f"Request for password reset.\nEnter the code below to reset your password for the MDFCS " \
                            f"Admin Account.\n{code}\nThe code is valid for 15 minutes."
                 mail.send(msg)
@@ -89,7 +89,7 @@ def new_password():
             hashed_password = sha256_crypt.hash(password)
             user.clerk_password = hashed_password
             db.session.commit()
-            msg = Message(f'Hello {name}', sender='escapistcyber@gmail.com',
+            msg = Message(f'Hello {name}', sender=sending_email,
                           recipients=[user.email])
             msg.body = f"You have successfully reset your password"
             # mail.send(msg)
@@ -189,7 +189,7 @@ def change_password():
                         check_user.clerk_password = sha256_crypt.hash(password)
                         db.session.commit()
                         name = Clerks.query.filter_by(email=email).first().clerk_sname
-                        msg = Message(f'Hello {name}.', sender='escapistcyber@gmail.com', recipients=[email])
+                        msg = Message(f'Hello {name}.', sender=sending_email, recipients=[email])
                         msg.body = f"Password change successful\nProceed to login using your new password to access " \
                                    f"the portal\n\nWelcome"
                         mail.send(msg)
