@@ -1,8 +1,8 @@
 
 portal.py
 instance/mdfcs.sqlite3
-.idea
-Backup
-__pycache__
-venv
+.idea/
+Backup/
+__pycache__/
+venv/
 app.log
