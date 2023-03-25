@@ -1,6 +1,6 @@
-__pycache__/
-.idea/
-Backup/
-instane/
+/__pycache__/
+/.idea/
+/Backup/
+/instane/
 app.log
 portal.py
