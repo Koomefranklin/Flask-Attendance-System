@@ -125,14 +125,15 @@ def adminregister():
     if request.method == "POST":
         name = request.form["name"].capitalize()
         username = request.form["username"].capitalize()
-        password = sha256_crypt.encrypt(request.form["password"])
+        password = sha256_crypt.hash(request.form["password"])
+        email = request.form["email"].lower()
 
         found_user = Admins.query.filter_by(adm_username=username).first()
         if found_user:
             flash("Username already taken")
             return render_template("adminsignup.html", title="Signup")
         else:
-            usr = Admins(username, name, password)
+            usr = Admins(username, name, password, email)
             db.session.add(usr)
             db.session.commit()
 
@@ -208,9 +209,9 @@ def clerkregistration():
             sname = request.form["s-name"].capitalize()
             address = request.form["address"].upper()
             clerk_email = request.form["email"].lower()
-            uname = email
+            uname = clerk_email
             phone = request.form["phone"]
-            password = sha256_crypt.encrypt(phone)
+            password = sha256_crypt.hash(phone)
             found_clerk = Clerks.query.filter_by(clerk_id=clerk_id).first()
             if found_clerk:
                 return render_template("clerkregistration.html",title = "Registration", username=logged_user())
